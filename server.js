@@ -14,7 +14,7 @@ var port = isProduction ? process.env.PORT : 3000;
 var publicPath = path.resolve(__dirname, 'public');
 
 app.use(express.static(publicPath));
-
+  
 if (!isProduction) {
 
   var bundle = require('./server/bundle.js');
@@ -24,7 +24,7 @@ if (!isProduction) {
         target: 'http://localhost:8080'
     });
   });
-
+  
 }
 
 proxy.on('error', function(e) {
