@@ -1,6 +1,6 @@
 import React from "react";
 import request from "superagent";
-import {host} from "../config";
+// import {host} from "../config";
 
 export default React.createClass({
   render: function() {
@@ -11,6 +11,7 @@ export default React.createClass({
     );
   },
   componentDidMount: function(){
+    var host = 'https://boiling-beyond-5952.herokuapp.com';
     request
       .get(host + '/users.json')
       .set('Accept', 'application/json')
