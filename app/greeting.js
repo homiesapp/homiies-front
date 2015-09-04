@@ -11,7 +11,7 @@ export default React.createClass({
     );
   },
   componentDidMount: function(){
-    var host = process.env.host || 'http://localhost:3000';
+    var host = process.env.api_host || 'http://localhost:3000';
     request
       .get(host + '/users.json')
       .set('Accept', 'application/json')

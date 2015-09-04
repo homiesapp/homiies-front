@@ -12,7 +12,7 @@ var app = express();
 var isProduction = process.env.NODE_ENV === 'production';
 var port = isProduction ? process.env.PORT : 3000;
 var publicPath = path.resolve(__dirname, 'public');
-process.env['host'] = 'https://boiling-beyond-5952.herokuapp.com';
+process.env['api_host'] = 'https://boiling-beyond-5952.herokuapp.com';
 app.use(express.static(publicPath));
   
 if (!isProduction) {
