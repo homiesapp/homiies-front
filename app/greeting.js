@@ -11,7 +11,8 @@ export default React.createClass({
     );
   },
   componentDidMount: function(){
-    var host = process.env.api_host || 'http://localhost:3000';
+    var isProduction = process.env.NODE_ENV === 'production';
+    var host = isProduction ? 'https://boiling-beyond-5952.herokuapp.com' : 'http://localhost:3000';
     request
       .get(host + '/users.json')
       .set('Accept', 'application/json')
