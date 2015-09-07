@@ -1,5 +1,4 @@
 var React = require('react');
-var Friends= require('./friend');
 
 module.exports = React.createClass({
   render: function() {

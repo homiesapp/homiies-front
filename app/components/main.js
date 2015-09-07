@@ -3,7 +3,8 @@ var Authentication = require('./authentication');
 var Home = require('./home');
 var Event = require('./event');
 var Login = require('./login');
-var Signup = require('./signup'); 
+var Signup = require('./signup');
+var Friends = require('./friend');
 
 module.exports = React.createClass({
 	getInitialState: function() {
