@@ -8,7 +8,9 @@ module.exports = React.createClass({
 
     return (
       <div className="friend">
-        {user.username}
+        <div className="username">
+          {user.username}
+        </div>
         <FriendInvite />
       </div>
     );

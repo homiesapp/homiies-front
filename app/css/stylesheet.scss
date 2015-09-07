@@ -7,7 +7,33 @@ html, body {
 	height: 100%;
 	width:100%;
 	background-color: #03A678;
+	position: relative;
 	
+	.friends{
+		width: 20%;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		.friend{
+			margin-bottom: 5px;
+			background-color: #FFF;
+			height:80px;
+			padding-left: 5px;
+		}
+
+		.username{
+			width: 70%;
+			display: inline-block;
+		}
+
+		.invited{
+			width: 20%;
+			height:inherit;
+			display: inline-block;
+			right: 0;
+		}
+	}
 }
 
 .authentication {
