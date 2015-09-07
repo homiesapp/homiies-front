@@ -13,11 +13,19 @@ module.exports = React.createClass({
 		this.setState({ authenticated:true });
 	},
 	render: function() {
+		//test data
+		var homies =[
+			{ username: "Smithy" },
+			{ username: "Johnster" },
+			{ username: "Bravo" },
+			{ username: "Epsilon" }
+		];
+
 		return (
 			<div className="main">
 				<button onClick={this.onClick}><p>Authenticate</p></button>	
 				{this.state.authenticated ? <Home /> : <Authentication /> }
-
+				<Friends homies={friends}/>
 			</div>
 		);
 	}

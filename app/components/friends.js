@@ -4,7 +4,7 @@ var Friends= require('./friend');
 module.exports = React.createClass({
   render: function() {
 
-    var friends = this.props.friends;
+    var friends = this.props.homies;
 
     return (
       <div className="friends">
