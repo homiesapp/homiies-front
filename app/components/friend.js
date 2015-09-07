@@ -7,7 +7,7 @@ module.exports = React.createClass({
 
     return (
       <div className="friend">
-        user.username
+        {user.username}
       </div>
     );
   }

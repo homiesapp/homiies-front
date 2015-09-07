@@ -4,7 +4,7 @@ var Home = require('./home');
 var Event = require('./event');
 var Login = require('./login');
 var Signup = require('./signup');
-var Friends = require('./friend');
+var Friends = require('./friends');
 
 module.exports = React.createClass({
 	getInitialState: function() {
@@ -15,7 +15,7 @@ module.exports = React.createClass({
 	},
 	render: function() {
 		//test data
-		var homies =[
+		var friends =[
 			{ username: "Smithy" },
 			{ username: "Johnster" },
 			{ username: "Bravo" },
