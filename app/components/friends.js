@@ -1,5 +1,5 @@
 var React = require('react');
-var Friends = require('./friend');
+var Friends= require('./friend');
 
 module.exports = React.createClass({
   render: function() {
@@ -9,7 +9,8 @@ module.exports = React.createClass({
     return (
       <div className="friends">
         {friends.map(function(friend, index) {
-          <Friend />
+          return <Friend 
+                  homie={friend}/>
         })}
       </div>
     );
