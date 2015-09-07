@@ -1,14 +1,10 @@
 var React = require('react');
-var Login = require('./login');
-var Signup = require('./signup');
-
 
 module.exports = React.createClass({
 	render: function() {
 		return (
-			<div>
-				<Login />
-				<Signup />
+			<div className="home">
+				<p>Authenticated!</p>
 			</div>
 			);
 	}
