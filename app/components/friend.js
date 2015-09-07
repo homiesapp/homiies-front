@@ -1,4 +1,5 @@
 var React = require('react');
+var FriendInvite = require('./friend_invite');
 
 module.exports = React.createClass({
   render: function() {
@@ -8,6 +9,7 @@ module.exports = React.createClass({
     return (
       <div className="friend">
         {user.username}
+        <FriendInvite />
       </div>
     );
   }
