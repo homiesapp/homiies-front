@@ -13,13 +13,18 @@ module.exports = React.createClass({
 			{ username: "Smithy" },
 			{ username: "Johnster" },
 			{ username: "Bravo" },
+			{ username: "Epsilon" },
+			{ username: "Epsilon" },
+			{ username: "Smithy" },
+			{ username: "Johnster" },
+			{ username: "Bravo" },
 			{ username: "Epsilon" }
 		];
 
 		return (
 			<div className="home">
-				<div className="col-md-2 side-menu open"><SideMenu /></div>
-				<div className="col-md-8 main-center-div">
+				<div className="side-menu open "><SideMenu /></div>
+				<div className="col-md-10 main-center-div">
 					<div className="col-md-5"></div>
 					<div className="col-md-2"><h1>TEXT</h1></div>
 					<div className="col-md-5"></div>

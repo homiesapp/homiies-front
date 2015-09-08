@@ -130,7 +130,7 @@ html, body {
 	width:320px !important;
 	background-color: grey;
 	position:absolute;
-	top:0;
+	padding-left:-15px;
 	left:-320px;
 	margin-left:0 !important;
 	overflow-y:scroll;
@@ -148,15 +148,12 @@ html, body {
 	overflow-y:scroll;
 	padding:0;
 	height: inherit;
-
-
 }
 
 /* still need to figure out how to fit perfectly between two outter columns */
 .main-center-div {
-	width: 75%;
-	margin: 0;
-	margin:0;
+
+	
 
 }
 /* waiting for fix */

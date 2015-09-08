@@ -9,7 +9,11 @@ module.exports = React.createClass({
 			{ currentEvent: "Event 1" },
 			{ currentEvent: "Event 2" },
 			{ currentEvent: "Event 3" },
-			{ currentEvent: "Event 4" }
+			{ currentEvent: "Event 4" },
+      { currentEvent: "Event 1" },
+      { currentEvent: "Event 2" },
+      { currentEvent: "Event 3" },
+      { currentEvent: "Event 4" }
 		];
     return (
      	<div>
