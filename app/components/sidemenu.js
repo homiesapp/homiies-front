@@ -1,13 +1,17 @@
 var React = require('react');
+var Profile = require('./profile')
+var CurrentEvents = require('./currentevents')
+
 
 
 module.exports = React.createClass({
   render: function() {
 
-    //TODO changes between red X or green checkmark???
-
     return (
-     	<div></div>
+     	<div>
+     			<Profile />
+     			<CurrentEvents />
+     	</div>
     )
   }
 });
