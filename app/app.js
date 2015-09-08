@@ -1,6 +1,8 @@
 import React from "react";
 require('./css/stylesheet.scss');
 require('./css/bootstrap.min.css');
+require('./css/font-awesome.min.css');
+
 var Fluxxor = require('../node_modules/fluxxor');
 
 import Greeting from "./greeting";
