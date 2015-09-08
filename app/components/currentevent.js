@@ -9,7 +9,6 @@ module.exports = React.createClass({
 	render: function() {
 			var currentEvent = this.props.currentEvent;
 			return (
-				
 				<div className="current-event">
 					<div>
 						<h4>{currentEvent.currentEvent}</h4>
