@@ -59,6 +59,13 @@ html, body {
 
 .main {
 	background-color: #34495E;
+
+	.main-center-div {
+		height: 100%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+	}
 	
 	.friends-column{
 		background-color: #674172;
@@ -139,14 +146,6 @@ html, body {
 	padding:0;
 	height: inherit;
 }
-
-/* still need to figure out how to fit perfectly between two outter columns */
-.main-center-div {
-
-	
-
-}
-/* waiting for fix */
 
 .profile {
 	height:320px;
