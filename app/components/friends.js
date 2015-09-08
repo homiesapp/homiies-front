@@ -8,14 +8,11 @@ module.exports = React.createClass({
     console.log(friends);
     return (
       <div className="friends">
-        <div className="col-md-10"></div>
-        <div className="col-md-2 friends-column">
           {friends.map(function(friend, index) {
            return <Friend 
                    key =  {index}
                    homie = {friend}/>
          })}
-        </div>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 var React = require('react');
 var Friends = require('./friends');
+var SideMenu = require('./sidemenu')
 
 module.exports = React.createClass({
 	render: function() {
@@ -13,7 +14,15 @@ module.exports = React.createClass({
 
 		return (
 			<div className="home">
-				<Friends homies={friends}/>
+				<div className="col-md-2 side-menu open"><SideMenu /></div>
+				<div className="col-md-8 main-center-div">
+					<div className="col-md-5"></div>
+					<div className="col-md-2"></div>
+					<div className="col-md-5"></div>
+				</div>
+        		<div className="col-md-2 friends-column">
+					<Friends homies={friends}/>
+				</div>
 			</div>
 		);
 	}
