@@ -22,14 +22,14 @@ module.exports = React.createClass({
 		];
 
 		return (
-			<div className="home">
-				<div className="side-menu open "><SideMenu /></div>
-				<div className="col-md-10 main-center-div">
+			<div className="home row">
+				<div className="side-menu close"><SideMenu /></div>
+				<div className="col-sm-9 main-center-div">
 					<div className="col-md-5"></div>
 					<div className="col-md-2"><h1>TEXT</h1></div>
 					<div className="col-md-5"></div>
 				</div>
-        <div className="col-md-2 friends-column">
+        <div className="col-sm-3 friends-column">
 					<Friends homies={friends}/>
 				</div>
 			</div>

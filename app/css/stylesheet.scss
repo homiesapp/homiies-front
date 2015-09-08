@@ -58,33 +58,23 @@ html, body {
 }
 
 .main {
-	height: 100vh;
-	width:100vw;
 	background-color: #34495E;
-	position: absolute;
-	top: 0;
-	left: 0;
-	padding:0 !important;
 	
 	.friends-column{
 		background-color: #674172;
-		position:absolute;
-		top:0;
-		right:0;
 		overflow-y:scroll;
 		padding:0;
-		width:320px;
 		height: inherit;
 
 
 
-			.friend {
-				height:135px;
-				width:100%;
-				background-color:white;
-				margin-top:2px;
-				padding-left: 5px;
-			}
+		.friend {
+			height:135px;
+			width:100%;
+			background-color:white;
+			margin-top:2px;
+			padding-left: 5px;
+		}
 
 		.username{
 			width: 70%;
