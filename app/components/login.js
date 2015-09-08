@@ -10,9 +10,7 @@ module.exports = React.createClass({
 	render: function() {
 		return (
 			<div className="home">
-				
-						<Buttonaction className="login-button btn btn-primary btn-lg" onClick={this.handleLogin} text={'Login with Facebook'}/>
-					
+				<Buttonaction className="login-button btn btn-primary btn-lg" onClick={this.handleLogin} text={'Login with Facebook'}/>
 			</div>
 			);
 	}

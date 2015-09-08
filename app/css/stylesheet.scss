@@ -1,13 +1,57 @@
 html, body {
-    margin: 0;
-    height: 100%;
+	margin: 0;
+	height: 100%;
 }
 
 .main {
 	height: 100%;
 	width:100%;
 	background-color: #03A678;
+	position: relative;
 	
+	.friends-column{
+		background-color: grey;
+		position:absolute;
+		top:0;
+		right:0;
+		overflow:hidden;
+		padding:0;
+		width:320px;
+		height: 100%;
+
+			.friend {
+				height:135px;
+				width:100%;
+				background-color:white;
+				margin-bottom:0px;
+				border:1px black solid;
+				padding-left: 5px;
+			}
+
+		.username{
+			width: 70%;
+			display: inline-block;
+			color:black;
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.invited{
+			float:right;
+			height:133px;
+			width:30%;
+			background-color: green;
+			display: inline-block;
+			right: 0;
+		}
+
+		.checkmark{
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
 }
 
 .home {
@@ -19,11 +63,11 @@ html, body {
 
 /* STILL HAVE TO FIX TO RESPONSIVE VERTICAL ALIGN */
 .login-button {
-  position: relative;
-  top:480px;
-  transform: translateY(-50%);
+	position: relative;
+	top:480px;
+	transform: translateY(-50%);
 }
 
- 
+
 
 

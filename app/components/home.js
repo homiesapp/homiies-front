@@ -1,12 +1,20 @@
 var React = require('react');
+var Friends = require('./friends');
 
 module.exports = React.createClass({
 	render: function() {
+		//test data
+		var friends =[
+			{ username: "Smithy" },
+			{ username: "Johnster" },
+			{ username: "Bravo" },
+			{ username: "Epsilon" }
+		];
+
 		return (
 			<div className="home">
-				<p>Authenticated</p>
-				<Login />
+				<Friends homies={friends}/>
 			</div>
-			);
+		);
 	}
 });
