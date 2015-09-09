@@ -1,6 +1,7 @@
 var React = require('react');
 var Friends = require('./friends');
-var SideMenu = require('./sidemenu')
+var SideMenu = require('./sidemenu');
+var Event = require('./event');
 
 module.exports = React.createClass({
 	render: function() {

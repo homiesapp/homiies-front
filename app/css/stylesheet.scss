@@ -155,8 +155,17 @@ html, body {
 	height: inherit;
 }
 
+
+
+/* still need to figure out how to fit perfectly between two outter columns */
+.main-center-div {
+
+}
+/* waiting for fix */
+
+
 .profile {
-	height:320px;
+	height:180px;
 	width:320px;
 	background-color: white;
 }
@@ -169,8 +178,24 @@ html, body {
 	padding-left: 5px;
 	padding-top: 20px;
 	color:black;
-
+	  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
 }
 
+.current-event:hover {
+	cursor:pointer;
+	background-color: #fff8dc;
+}
+
+
+
+.image-profile {
+	height:140px;
+	width: 140px;
+	border-radius: 50%;
+	top:18px;
+	position:relative;
+
+}
 
 
