@@ -4,30 +4,14 @@ require('./css/bootstrap.min.css');
 require('./css/font-awesome.min.css');
 
 var Fluxxor = require('../node_modules/fluxxor');
+var constants = require('./stores/constants');
+var actions = require('./stores/actions');
 
 import Greeting from "./greeting";
 import Main from "./components/main";
 
-
 var FluxMixin = Fluxxor.FluxMixin(React),
 	StoreWatchMixin = Fluxxor.StoreWatchMixin;
-
-var constants = {
-  SHOW_EVENTS: "SHOW_EVENTS",
-  DELETE_EVENT: "DELETE_EVENT",
-  CREATE_EVENT: "CREATE_EVENT",
-  EDIT_EVENT: "EDIT_EVENT",
-  LOG_INFO: "LOG_INFO"
-};
-var actions = {
-	createEvent: function(newEvent) {
-		this.dispatch(constants.CREATE_EVENT, {newEvent: newEvent});
-	},
-	logInfo: function(log) {
-		console.log('dispatching');
-		this.dispatch(constants.LOG_INFO, {log: log});
-	}
-};
 
 var EventStore = Fluxxor.createStore({
 	initialize: function(){
@@ -89,6 +73,7 @@ flux.on("dispatch", function(type, payload) {
   }
 });
 console.log(flux);
+
 React.render(
   <Main flux={flux} />,
   document.body

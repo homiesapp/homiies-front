@@ -13,7 +13,7 @@ export default React.createClass({
   componentDidMount: function(){
     var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
     request
-      .get(host + '/users.json')
+      .get(host + '/api/users.json')
       .set('Accept', 'application/json')
       .end(function(err, res){
         console.log(res);
