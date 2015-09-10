@@ -3,8 +3,9 @@ var Friends = require('./friends');
 var SideMenu = require('./sidemenu');
 var Event = require('./event');
 var Fluxxor = require('../../node_modules/fluxxor');
-var FluxMixin = Fluxxor.FluxMixin(React)
-var StoreWatchMixin = Fluxxor.StoreWatchMixin
+var FluxMixin = Fluxxor.FluxMixin(React);
+var StoreWatchMixin = Fluxxor.StoreWatchMixin;
+var Map = require('./map');
 
 module.exports = React.createClass({
 	mixins: [FluxMixin, StoreWatchMixin("EventStore")],
@@ -53,7 +54,7 @@ module.exports = React.createClass({
 							<div className="col-md-6 bblue"><h1>VOTES</h1></div>
 						</div>
 						<div className="row">
-							<div className="col-md-6 bgreen"><h1>MAP</h1></div>
+							<div className="col-md-6 bgreen"><Map /></div>
 							<div className="col-md-6 byellow"><h1>CHAT</h1></div>
 						</div>
 					</div>
