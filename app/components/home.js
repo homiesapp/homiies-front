@@ -43,7 +43,7 @@ module.exports = React.createClass({
 				</div>
 				<div className="col-sm-8 main-center-div">
 					<div className="event-create">
-						<div className="col-sm-12 event-circle"></div>
+						<div className="col-sm-12 event-circle"><div className="event-circle-text">Create Event</div></div>
 					</div>
 					<div className="event-info">
 						<div className="row">

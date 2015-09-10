@@ -72,6 +72,14 @@ html, body {
 			height: 180px;
 			width: 180px;
 			border-radius: 50%;
+			border:solid #71c458 5px;
+			color:black;
+			font-size: 2em;
+		}
+		.event-circle-text {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
 		}
 	}
 
@@ -100,6 +108,13 @@ html, body {
 			background-color:white;
 			margin-top:2px;
 			padding-left: 5px;
+			cursor:pointer;
+			z-index: 100;
+		}
+
+		.friend:hover + .invited {
+			position: relative;
+			left:0px;
 		}
 
 		.username{
@@ -114,11 +129,13 @@ html, body {
 		.invited{
 			float:right;
 			height:135px;
-			width:30%;
+			min-width: 50px;
+			max-width: 100px;
 			background-color: #71c458;
-			display: inline-block;
-			right: 0;
+			position: relative;
+			left:90px;
 		}
+		
 
 		.checkmark{
 			position: relative;
@@ -175,4 +192,17 @@ html, body {
 
 }
 
+.friend-picture {
+	border-radius:50%;
+	height: 110px;
+	width: 110px;
+	position: relative;
+	top:12px;
+	border:3px #71c458 solid;
 
+}
+
+
+.greeen {
+	background-color: red;
+}
