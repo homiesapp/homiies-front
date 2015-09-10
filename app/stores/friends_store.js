@@ -5,12 +5,17 @@ module.exports = Fluxxor.createStore({
 	initialize: function () {
 		this.friends = [];
 
-		this.bindAction(
+		this.bindActions(
 			constants.SHOW_FRIENDS, this.onShowFriends
 		);
 	},
 	onShowFriends: function (payload) {
 		console.log('payload is: ', payload);
+	},
+	getState: function (payload) {
+		return {
+			firendsList: this.friends	
+		};
 	}
 });
 

@@ -3,38 +3,22 @@ var Friends = require('./friends');
 var SideMenu = require('./sidemenu');
 var Event = require('./event');
 var Fluxxor = require('../../node_modules/fluxxor');
-var FluxMixin = Fluxxor.FluxMixin(React)
-var StoreWatchMixin = Fluxxor.StoreWatchMixin
+var FluxMixin = Fluxxor.FluxMixin(React);
+var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
 module.exports = React.createClass({
-	mixins: [FluxMixin, StoreWatchMixin("EventStore")],
+	mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
 	getStateFromFlux: function(){
 		var flux = this.getFlux();
 		console.log('flux is', flux);
-		console.log('sotre is', flux.store('EventStore'));
-		return flux.store("EventStore").getState();
+		console.log('sotre is', flux.store('EventsStore'));
+		return flux.store("EventsStore").getState();
 	},
 	clickHandler: function(){
 		console.log('click')
 		this.getFlux().actions.logInfo('clicking');
 	},
 	render: function() {
-		//test data
-		var friends =[
-			{ username: "Smithy" },
-			{ username: "Johnster" },
-			{ username: "Bravo" },
-			{ username: "Epsilon" },
-			{ username: "Smithy" },
-			{ username: "Johnster" },
-			{ username: "Bravo" },
-			{ username: "Epsilon" },
-			{ username: "Epsilon" },
-			{ username: "Smithy" },
-			{ username: "Johnster" },
-			{ username: "Bravo" },
-			{ username: "Epsilon" }
-		];
 
 		return (
 			<div className="home row">
@@ -60,7 +44,7 @@ module.exports = React.createClass({
 				</div>
 
         <div className="col-sm-2 friends-column">
-					<Friends homies={friends}/>
+					<Friends />
 				</div>
 			</div>
 		);
