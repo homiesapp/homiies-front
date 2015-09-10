@@ -16,17 +16,15 @@ module.exports = React.createClass({
       div: '#map',
       lat: -12.043333,
       lng: -77.028333,
-      width: '200px',
-      height: '200px',
+      width: '100%',
+      height: '100%',
     });
   },
 
   render(){
 
     return (
-      <div className="map-holder" id="test">
-        <div id="map"></div>
-      </div>
+      <div id="map"></div>
     );
   }
 });
