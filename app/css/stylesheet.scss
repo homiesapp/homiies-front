@@ -109,7 +109,7 @@ html, body {
 
 	
 	.friends-column{
-		background-color: #674172;
+		background-color: grey;
 		overflow-y:scroll;
 		padding:0;
 		height: inherit;
@@ -233,4 +233,10 @@ html, body {
 }
 .bgreen {
 	background-color: green;
+}
+
+
+.friend-username {
+			position: relative;
+			top: 55px;
 }

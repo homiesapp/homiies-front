@@ -24,12 +24,18 @@ module.exports = Fluxxor.createStore({
     this.friends = payload.friends;
     this.emit('change');
 	},
-	onShowFriends: function (payload) {
-		console.log('payload is: ', payload);
+	onLoadFriendsFail: function (payload) {
+
 	},
+	// STILL TO DO 
+	onShowFriends: function (payload) {
+
+	},
+	// STILL TO DO 
+
 	onAddFriend: function (payload) {
-		console.log('payload is: ', payload);
-		this.friends.push(payload);
+	
+
 	},
 	getState: function () {
 		return {

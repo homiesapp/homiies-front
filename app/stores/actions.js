@@ -3,9 +3,31 @@ var constants = require('./constants');
 import request from "superagent";
 
 module.exports = {
-	createEvent: function(newEvent) {
-		this.dispatch(constants.CREATE_EVENT, {newEvent: newEvent});
+	// EVENTS STORE
+	listEventInvitees: function (){
+		this.dispatch(constants.LOAD_EVENT_INVITEES, {eventInvitees: eventInvitees});
 	},
+	editEvent: function (event) {
+		this.dispatch(constants.EDIT_EVENT, {editEvent: editEvent});
+	},
+	showEvents: function (events) {
+		this.dispatch(constants.SHOW_EVENTS, {events: events});
+	},
+	addEvent: function (event) {
+		this.dispatch(constants.ADD_EVENT, {addEvent: addEvent});
+	},
+	loadEvents: function () {
+		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
+		this.dispatch(constants.LOAD_EVENTS);
+
+		request
+      .get(host + '/users/' + 1 + '/events')
+      .set('Accept', 'application/json')
+      .end(function(err, res){
+        this.dispatch(constants.LOAD_EVENT_SUCCESS, {events: res.body});
+      }.bind(this));
+	},
+	// FRIENDS STORE
 	logInfo: function(log) {
 		console.log('dispatching');
 		this.dispatch(constants.LOG_INFO, {log: log});

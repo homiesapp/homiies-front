@@ -2,49 +2,55 @@ var Fluxxor = require('../../node_modules/fluxxor');
 var constants = require('./constants');
 
 module.exports = Fluxxor.createStore({
-	initialize: function(){
-		this.events = {};
+	initialize: function () {
+		this.events = [];
+		this.loading = false;
+		this.error = null;
 
 		this.bindActions(
+			constants.LOAD_EVENTS, this.onLoadEvents,
+			constants.LOAD_EVENTS_SUCCESS, this.onLoadEventsSuccess,
 			constants.SHOW_EVENTS, this.onShowEvents,
-			constants.DELETE_EVENT, this.onDeleteEvent,
-			constants.CREATE_EVENT, this.onCreateEvent,
-			constants.EDIT_EVENT, this.onEditEvent,
-			constants.LOG_INFO, this.onLogInfo
+			constants.ADD_EVENT, this.onAddEvent,
+			constants.EDIT_EVENT, this.onEditEvent
 		);
 	},
-
-	onLogInfo: function(payload) {
-		console.log('Using Floxxor', payload);
-	},
-
-	onShowEvents: function(payload) {
+	// STILL TO DO 
+	onEditEvent: function (editEvent) {
 
 	},
-
-	onCreateEvent: function(payload) {
-		var newEvent = {
-			time: payload.eventTime,
-			title: payload.eventTitle,
-			address: payload.eventAddress,
-			country: "Canada",
-			city: "Vancouver",
-			description: payload.eventDescription,
-			picture: payload.eventPicture,
-			category: "Party"
-		};
-		this.events[id] = newEvent;
-		this.emit("change");
-	},
-	onDeleteEvent: function(payload) {
+	// STILL TO DO 
+	onLoadEventInvitees: function (){
 
 	},
-	onEditEvent: function (payload) {
+	onLoadEvents: function () {
+	  this.loading = true;
+    this.emit('change');
+	},
+	onLoadEventsSuccess: function (payload) {
+		this.loading = false;
+    this.error = null;
+    this.events = payload.events;
+    this.emit('change');
+	},
+	// STILL TO DO 
+	onLoadEventsFail: function (payload) {
 
 	},
-	getState: function (payload) {
+	// STILL TO DO
+	onShowEvents: function (payload) {
+
+	},
+	// STILL TO DO
+	onAddEvent: function (payload) {
+
+
+	},
+	getState: function () {
 		return {
-			events: this.events
-		}
+			eventsList: this.events,
+			loading: this.loading,
+			error: this.error
+		};
 	}
-})
+});
