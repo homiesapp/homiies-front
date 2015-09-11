@@ -1,28 +1,33 @@
 var React = require('react');
 var CurrentEvent = require('./currentevent')
-
+var EventsStore = require('../stores/events_store');
+var Fluxxor = require('../../node_modules/fluxxor');
+var FluxMixin = Fluxxor.FluxMixin(React);
+var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
 module.exports = React.createClass({
+  mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
   render: function() {
-
-  	var currentEvents =[
-			{ currentEvent: "Event 1" },
-			{ currentEvent: "Event 2" },
-			{ currentEvent: "Event 3" },
-			{ currentEvent: "Event 4" },
-      { currentEvent: "Event 1" },
-      { currentEvent: "Event 2" },
-      { currentEvent: "Event 3" },
-      { currentEvent: "Event 4" }
-		];
     return (
-     	<div>
-          {currentEvents.map(function(currentEvent, index) {
-           return <CurrentEvent 
-                   key =  {index}
-                   currentEvent = {currentEvent}/>
-         })}
+      <div className="current-events">
+        {this.state.loading ? <li>Loading...</li> : null}
+        {this.state.currentEvents.map(function(currentEvent, index) {
+          return <CurrentEvent 
+                    key =  {index}
+                    currentEvent = {currentEvent}/>
+                })}
       </div>
-    )
+    );
+  },
+  componentDidMount: function () {
+    this.getFlux().actions.loadEvents();
+  }, 
+  getStateFromFlux: function () {
+    var store = this.getFlux().store('EventsStore');
+    return {
+      loading: store.loading,
+      error: store.error,
+      currentEvents: store.events
+    };
   }
 });
