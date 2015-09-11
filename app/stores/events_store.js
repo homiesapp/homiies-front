@@ -17,11 +17,11 @@ module.exports = Fluxxor.createStore({
 	},
 	// STILL TO DO 
 	onEditEvent: function (editEvent) {
-
+		
 	},
 	// STILL TO DO 
 	onLoadEventInvitees: function (){
-
+		
 	},
 	onLoadEvents: function () {
 	  this.loading = true;
