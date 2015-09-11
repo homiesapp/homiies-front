@@ -1,11 +1,9 @@
 var React = require('react');
 
-module.exports = React.createclass({
+module.exports = React.createClass({
   render: function() {
     if(this.props.isOpen){
         return (
-          <button type="button" className="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
           <div className="modal fade" id="myModal" role="dialog">
             <div className="modal-dialog">
 
