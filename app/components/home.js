@@ -5,6 +5,10 @@ var Event = require('./event');
 var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
+<<<<<<< HEAD
+=======
+var Map = require('./map');
+>>>>>>> features/google-maps
 
 module.exports = React.createClass({
 	mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
