@@ -10,12 +10,9 @@ module.exports = React.createClass({
 	mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
 	getStateFromFlux: function(){
 		var flux = this.getFlux();
-		console.log('flux is', flux);
-		console.log('sotre is', flux.store('EventsStore'));
 		return flux.store("EventsStore").getState();
 	},
 	clickHandler: function(){
-		console.log('click')
 		this.getFlux().actions.logInfo('clicking');
 	},
 	render: function() {
