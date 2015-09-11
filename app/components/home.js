@@ -14,8 +14,18 @@ module.exports = React.createClass({
 		var flux = this.getFlux();
 		return flux.store("EventsStore").getState();
 	},
+	getInitialState: function(){
+    return {
+      popup: false,
+    }
+  },
 	clickHandler: function(){
 		this.getFlux().actions.logInfo('clicking');
+	},
+	openModal: function(){
+		this.setState({
+      popup: true
+    });
 	},
 	render: function() {
 
@@ -27,8 +37,8 @@ module.exports = React.createClass({
 				<div className="col-sm-8 main-center-div">
 					<div className="event-create">
 						<div className="col-sm-12 event-circle">
-							<div className="event-circle-text">Create Event</div>
-							<Modal isOpen={true}/>
+							<div className="event-circle-text" onClick={this.openModal} >Create Event</div>
+							<Modal isOpen={this.state.popup}/>
 						</div>
 					</div>
 				</div>
