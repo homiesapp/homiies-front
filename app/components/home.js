@@ -49,12 +49,12 @@ module.exports = React.createClass({
 				<div className="col-sm-8 main-center-div">
 					<div className="col-md-12 event-info">
 						<div className="row">
-							<div className="col-md-6 bred"><h1>SWIPE</h1></div>
-							<div className="col-md-6 bblue"><h1>VOTES</h1></div>
+							<div className="col-md-6 bred quadrant"><h1>SWIPE</h1></div>
+							<div className="col-md-6 bblue quadrant"><h1>VOTES</h1></div>
 						</div>
 						<div className="row">
-							<div className="col-md-6 bgreen"><h1>MAP</h1></div>
-							<div className="col-md-6 byellow"><h1>CHAT</h1></div>
+							<div className="col-md-6 bgreen quadrant"><h1>MAP</h1></div>
+							<div className="col-md-6 byellow quadrant"><h1>CHAT</h1></div>
 						</div>
 					</div>
 				</div>

@@ -66,6 +66,14 @@ html, body {
 		justify-content:center;
 		align-items:center;
 
+		.quadrant{
+			height:100%;
+		}
+
+		.row{
+			height: 50%;
+		}
+
 		.event-info {
 			padding-left: 0px;
 			padding-right: 0px;
@@ -90,14 +98,14 @@ html, body {
 	}
 
 	.side-menu {
-	background-color: #674172;
-	overflow-y:scroll;
-	height: inherit;
-	padding-left: 0px;
-	padding-right:0px;
+		background-color: #674172;
+		overflow-y:scroll;
+		height: inherit;
+		padding-left: 0px;
+		padding-right:0px;
 
 
- } 
+	 } 
 
 	
 	.friends-column{
@@ -214,21 +222,13 @@ html, body {
 
 .bblue {
 	background-color: blue;
-	height:496px;
-	width: 100%;
 }
 .bred {
 	background-color: red;
-	height:496px;
-	width: 100%;
 }
 .byellow {
 	background-color: yellow;
-	height:496px;
-	width: 100%;
 }
 .bgreen {
 	background-color: green;
-	height:496px;
-	width: 100%;
 }
