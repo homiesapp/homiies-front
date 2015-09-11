@@ -27,6 +27,11 @@ module.exports = React.createClass({
       popup: true
     });
 	},
+	closeModal: function(){
+		this.setState({
+      popup: false
+    });
+	},
 	render: function() {
 
 		return (
@@ -38,7 +43,7 @@ module.exports = React.createClass({
 					<div className="event-create">
 						<div className="col-sm-12 event-circle">
 							<div className="event-circle-text" onClick={this.openModal} >Create Event</div>
-							<Modal isOpen={this.state.popup}/>
+							<Modal isOpen={this.state.popup} handleCloseModal={this.closeModal}/>
 						</div>
 					</div>
 				</div>

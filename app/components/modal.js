@@ -1,6 +1,11 @@
 var React = require('react');
+var ButtonAction = require('./buttonaction');
 
 module.exports = React.createClass({
+  handleCloseModal: function(){
+    this.props.handleCloseModal();
+  },
+
   render: function() {
 
     var modalClass = "modal fade";
@@ -27,7 +32,7 @@ module.exports = React.createClass({
               <p>Some text in the modal.</p>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+              <ButtonAction className="btn btn-default" clickHandler={this.handleCloseModal} text="Close" />
             </div>
           </div>
           

@@ -18,7 +18,7 @@ module.exports = React.createClass({
 	render: function() {
 		return (
 			<div>
-				<button className={this.props.className} onClick={this.clickHandler} >{this.props.text}</button>
+				<button type="button" className={this.props.className} onClick={this.clickHandler} >{this.props.text}</button>
 			</div>
 			);
 	}
