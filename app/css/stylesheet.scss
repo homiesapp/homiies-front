@@ -110,6 +110,7 @@ html, body {
 			padding-left: 5px;
 			cursor:pointer;
 			z-index: 100;
+			color:black;
 		}
 
 		.friend:hover + .invited {
@@ -213,21 +214,21 @@ html, body {
 
 .bblue {
 	background-color: blue;
-	height:496px;
-	width: 100%;
+	height:50vh;
+	width: 50vw;
 }
 .bred {
 	background-color: red;
-	height:496px;
-	width: 100%;
+	height:50vh;
+	width: 50vw;
 }
 .byellow {
 	background-color: yellow;
-	height:496px;
-	width: 100%;
+	height:50vh;
+	width: 50vw;
 }
 .bgreen {
 	background-color: green;
-	height:496px;
-	width: 100%;
+	height:50vh;
+	width: 50vw;
 }
