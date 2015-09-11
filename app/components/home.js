@@ -6,6 +6,7 @@ var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 var Map = require('./map');
+var Modal = require('./modal');
 
 module.exports = React.createClass({
 	mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
@@ -31,8 +32,11 @@ module.exports = React.createClass({
 				<div className="col-sm-8 main-center-div">
 					<div className="col-md-12 event-info">
 						<div className="row">
-							<div className="col-md-6 bred quadrant"><h1>SWIPE</h1></div>
-							<div className="col-md-6 bblue quadrant"><h1>VOTES</h1></div>
+							<div className="col-md-6 bred quadrant">
+								<h1>SWIPE</h1>
+								<Modal isOpen={true}/>
+							</div>
+							<div className="col-md-6 bblue quadrant"><h1>Votes</h1></div>
 						</div>
 						<div className="row">
 							<div className="col-md-6 bgreen quadrant"><h1>MAP</h1></div>
