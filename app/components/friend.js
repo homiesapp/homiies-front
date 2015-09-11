@@ -5,17 +5,16 @@ var Picture = require('./picture');
 module.exports = React.createClass({
   render: function() {
 
-    var user = this.props.homie;
+    var user = this.props.homiie;
 
     return (
       <div className="friend">
         <div className="row">
           <div className="col-md-6">
             <Picture imageClass="friend-picture" imageSource="http://blog.texasbar.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg" />
+            <p >{this.props.homiie}</p>
           </div>
           <div className="col-md-6">
-            
-
             <FriendInvite />
           </div>
         </div>
