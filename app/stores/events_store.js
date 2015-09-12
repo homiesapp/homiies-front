@@ -3,8 +3,9 @@ var constants = require('./constants');
 
 module.exports = Fluxxor.createStore({
 	initialize: function () {
-		this.events = [];
 		this.pendingEvents = [];
+		this.attendingEvents = [];
+		this.adminEvents = []
 		this.loading = false;
 		this.error = null;
 		this.eventInviteesNumber = 0;
@@ -22,8 +23,9 @@ module.exports = Fluxxor.createStore({
 	onLoadEventsSuccess: function (payload) {
 		this.loading = false;
     this.error = null;
-    this.events = payload.events;
+    this.attendingEvents = payload.attendingEvents;
     this.pendingEvents = payload.pendingEvents;
+    this.adminEvents = payload.adminEvents;
     this.emit('change');
 	},
 	// STILL TO DO 
@@ -36,10 +38,11 @@ module.exports = Fluxxor.createStore({
 	},
 	getState: function () {
 		return {
-			events: this.events,
 			loading: this.loading,
 			error: this.error,
-			pendingEvents: this.pendingEvents
+			pendingEvents: this.pendingEvents,
+			attendingEvents: this.attendingEvents,
+			adminEvents: this.adminEvents
 		};
 	}
 });

@@ -8,7 +8,6 @@ var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 module.exports = React.createClass({
   mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
   render: function() {
-    var length = this.state.events.length;
     return (
       <div className="current-events">
         {this.state.loading ? <li>Loading...</li> : null}

@@ -16,8 +16,9 @@ module.exports = {
       .set('Accept', 'application/json')
       .end(function(err, res){
         this.dispatch(constants.LOAD_EVENTS_SUCCESS, {
-        	events: res.body,
-        	pendingEvents: res.body.events_pending
+        	pendingEvents: res.body.events_pending,
+        	attendingEvents: res.body.events_attending,
+        	adminEvents: res.body.events_admin
         });
       }.bind(this));
 	},
