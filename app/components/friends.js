@@ -1,7 +1,6 @@
 import request from "superagent";
 var React = require('react');
 var Friend = require('./friend');
-var FriendsStore = require('../stores/friends_store');
 var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;

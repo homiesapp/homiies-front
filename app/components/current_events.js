@@ -1,6 +1,5 @@
 var React = require('react');
 var CurrentEvent = require('./current_event')
-var EventsStore = require('../stores/events_store');
 var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
@@ -11,15 +10,39 @@ module.exports = React.createClass({
     return (
       <div className="current-events">
         {this.state.loading ? <li>Loading...</li> : null}
-        {
-          this.state.pendingEvents.map(function(pendingEvent) {
-            return (
-              <CurrentEvent 
-                key =  {pendingEvent.id} 
-                eventNow = {pendingEvent.title} />
-            );
-          })
-        }
+        <div className="pending">
+          {
+            this.state.pendingEvents.map(function(pendingEvent) {
+              return (
+                <CurrentEvent 
+                  key =  {pendingEvent.id} 
+                  eventNow = {pendingEvent.title} />
+              );
+            })
+          }
+        </div>
+        <div className="attending">
+          {
+            this.state.attendingEvents.map(function(pendingEvent) {
+              return (
+                <CurrentEvent 
+                  key =  {pendingEvent.id} 
+                  eventNow = {pendingEvent.title} />
+              );
+            })
+          }
+        </div>
+        <div className="admin">
+          {
+            this.state.adminEvents.map(function(pendingEvent) {
+              return (
+                <CurrentEvent 
+                  key =  {pendingEvent.id} 
+                  eventNow = {pendingEvent.title} />
+              );
+            })
+          }
+        </div>
       </div>
     );
   },
@@ -33,7 +56,9 @@ module.exports = React.createClass({
       loading: store.loading,
       error: store.error,
       events: store.events,
-      pendingEvents: store.pendingEvents
+      pendingEvents: store.pendingEvents,
+      attendingEvents: store.attendingEvents,
+      adminEvents: store.adminEvents
     };
   }
 });

@@ -44,5 +44,9 @@ module.exports = Fluxxor.createStore({
 			attendingEvents: this.attendingEvents,
 			adminEvents: this.adminEvents
 		};
+	},
+	orderEventsByDate: function () {
+
 	}
+
 });
