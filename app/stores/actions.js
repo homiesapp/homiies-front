@@ -7,6 +7,19 @@ module.exports = {
 	showEvents: function (events) {
 		this.dispatch(constants.SHOW_EVENTS, {events: events});
 	},
+	loadEventsOrder: function () {
+		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
+		this.dispatch(constants.LOAD_EVENTS);
+
+		request
+			.get(host + '/users/' + 1 + '/events?order=time')
+			.set('Accept', 'application/json')
+			.end(function (err, res) {
+				this.dispatch(constants.LOAD_EVENTS_ORDER_SUCCESS, {
+					events: res.body
+				});
+			}.bind(this));
+	},
 	loadEvents: function () {
 		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
 		this.dispatch(constants.LOAD_EVENTS);
