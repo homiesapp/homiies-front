@@ -1,6 +1,6 @@
 var React = require('react');
 var Profile = require('./profile')
-var CurrentEvents = require('./currentevents')
+var CurrentEvents = require('./current_events')
 
 
 

@@ -1,4 +1,4 @@
-/* TO RESET CSS */
+ /* TO RESET CSS */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -89,6 +89,10 @@ html, body {
 			border:solid #71c458 5px;
 			color:black;
 			font-size: 2em;
+		}
+		.event-circle:hover {
+			cursor:pointer;
+			background-color: #ffa;
 		}
 		.event-circle-text {
 			position: relative;

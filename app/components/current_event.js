@@ -9,7 +9,7 @@ module.exports = React.createClass({
 			return (
 				<div className="current-event">
 					<div>
-						<h4>{this.props.currentEvent}</h4>
+						<h4>{this.props.eventNow}</h4>
 					</div>
 				</div>
 				);

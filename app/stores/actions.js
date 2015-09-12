@@ -3,18 +3,9 @@ var constants = require('./constants');
 import request from "superagent";
 
 module.exports = {
-	// EVENTS STORE
-	listEventInvitees: function (){
-		this.dispatch(constants.LOAD_EVENT_INVITEES, {eventInvitees: eventInvitees});
-	},
-	editEvent: function (event) {
-		this.dispatch(constants.EDIT_EVENT, {editEvent: editEvent});
-	},
+// EVENTS STORE
 	showEvents: function (events) {
 		this.dispatch(constants.SHOW_EVENTS, {events: events});
-	},
-	addEvent: function (event) {
-		this.dispatch(constants.ADD_EVENT, {addEvent: addEvent});
 	},
 	loadEvents: function () {
 		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
@@ -24,10 +15,36 @@ module.exports = {
       .get(host + '/users/' + 1 + '/events')
       .set('Accept', 'application/json')
       .end(function(err, res){
-        this.dispatch(constants.LOAD_EVENT_SUCCESS, {events: res.body});
+        this.dispatch(constants.LOAD_EVENTS_SUCCESS, {
+        	events: res.body,
+        	pendingEvents: res.body.events_pending
+        });
       }.bind(this));
 	},
-	// FRIENDS STORE
+// EVENT STORE
+	editEvent: function (event) {
+		this.dispatch(constants.EDIT_EVENT, {editEvent: editEvent});
+	},
+	showEvent: function (events) {
+		this.dispatch(constants.SHOW_EVENTS, {events: events});
+	},
+	addEvent: function (event) {
+		this.dispatch(constants.ADD_EVENT, {addEvent: addEvent});
+	},
+	loadEvent: function () {
+		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
+		this.dispatch(constants.LOAD_EVENT);
+
+		request
+      .get(host + '/users/' + 1 + '/events/' + 1)
+      .set('Accept', 'application/json')
+      .end(function(err, res){
+        this.dispatch(constants.LOAD_EVENT_SUCCESS, {
+        	event: res.body
+        });
+      }.bind(this));
+	},
+// FRIENDS STORE
 	logInfo: function(log) {
 		console.log('dispatching');
 		this.dispatch(constants.LOG_INFO, {log: log});

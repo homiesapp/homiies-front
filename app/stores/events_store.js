@@ -4,24 +4,16 @@ var constants = require('./constants');
 module.exports = Fluxxor.createStore({
 	initialize: function () {
 		this.events = [];
+		this.pendingEvents = [];
 		this.loading = false;
 		this.error = null;
+		this.eventInviteesNumber = 0;
 
 		this.bindActions(
 			constants.LOAD_EVENTS, this.onLoadEvents,
 			constants.LOAD_EVENTS_SUCCESS, this.onLoadEventsSuccess,
-			constants.SHOW_EVENTS, this.onShowEvents,
-			constants.ADD_EVENT, this.onAddEvent,
-			constants.EDIT_EVENT, this.onEditEvent
+			constants.SHOW_EVENTS, this.onShowEvents
 		);
-	},
-	// STILL TO DO 
-	onEditEvent: function (editEvent) {
-		
-	},
-	// STILL TO DO 
-	onLoadEventInvitees: function (){
-		
 	},
 	onLoadEvents: function () {
 	  this.loading = true;
@@ -31,6 +23,7 @@ module.exports = Fluxxor.createStore({
 		this.loading = false;
     this.error = null;
     this.events = payload.events;
+    this.pendingEvents = payload.pendingEvents;
     this.emit('change');
 	},
 	// STILL TO DO 
@@ -41,16 +34,12 @@ module.exports = Fluxxor.createStore({
 	onShowEvents: function (payload) {
 
 	},
-	// STILL TO DO
-	onAddEvent: function (payload) {
-
-
-	},
 	getState: function () {
 		return {
-			eventsList: this.events,
+			events: this.events,
 			loading: this.loading,
-			error: this.error
+			error: this.error,
+			pendingEvents: this.pendingEvents
 		};
 	}
 });
