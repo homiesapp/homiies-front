@@ -66,6 +66,10 @@ html, body {
 		justify-content:center;
 		align-items:center;
 
+		.modal{
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
 		.quadrant{
 			height:100%;
 		}
