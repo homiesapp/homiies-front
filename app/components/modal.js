@@ -1,5 +1,5 @@
 var React = require('react');
-var ButtonAction = require('./buttonaction');
+var ButtonAction = require('./button_action');
 
 module.exports = React.createClass({
   handleCloseModal: function(){
