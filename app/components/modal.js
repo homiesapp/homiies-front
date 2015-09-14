@@ -11,16 +11,6 @@ module.exports = React.createClass({
 
     var modalClass = "modal fade";
     var modalStyle;
-    var locations; 
-    
-    request.get('http://localhost:3000/suggest')
-            .set('Accept', 'application/json')
-            .end(function(err, res){
-              locations = res;
-            });
-
-    console.log(locations);
-
 
     if(this.props.isOpen){
       modalClass += " in";

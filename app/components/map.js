@@ -2,16 +2,16 @@ var React = require('react');
 var Gmap = require('../../node_modules/gmaps');
 
 module.exports = React.createClass({
+
   componentDidMount: function(){
 
     // Only componentDidMount is called when the component is first added.
     // This makes sure that our map initialization code is run the first time.
-
-    this.componentDidUpdate();
+    navigator.geolocation.getCurrentPosition(this.componentDidUpdate);
   },
 
-  componentDidUpdate: function(){
-    
+  componentDidUpdate: function(position){
+    console.log(position);
     var map = new GMaps({
       div: '#map',
       lat: -12.043333,
