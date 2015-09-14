@@ -123,6 +123,7 @@ html, body {
 		overflow-y:scroll;
 		padding:0;
 		height: inherit;
+		border-left:5px solid black;
 
 
 
@@ -170,7 +171,9 @@ html, body {
 	}
 }
 
-
+.footerfooter {
+	height:0px;
+}
 .home {
 	text-align: center;
 	height:100vh;
@@ -253,7 +256,7 @@ html, body {
 
 /******** CHAT ********/
 .chat_container {
-
+	height: 100%;
 }
 
 .conversation {
@@ -264,24 +267,151 @@ html, body {
 }
 
 .message {
-	color: black;
+	color: white;
+	display: block;
 
 }
 
 input.chat_input.form-control {
-	height: 25px;
+width: 100%;
+
 }
 
-.chat_button {
-	width: 15%;
-}
 
-.self {
-  text-align: right;
+
+/*.self {
+  float: right;
+  background-color: green;
+  padding: 5px;
+  margin-right:14px;
 }
 
 .other {
-	text-align: left;
+  float: left;
+  background-color: blue;
+  padding: 5px;
+  margin-left:14px;
+}*/
+
+
+.form-inline {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+@import url(http://weloveiconfonts.com/api/?family=typicons);
+[class*="typicons-"]:before {
+  font-family: 'Typicons', sans-serif;
 }
 
 
+
+
+.module {
+	height: 100%;
+	overflow: scroll;
+}
+.discussion {
+	overflow: scroll;
+  list-style: none;
+  background: #e5e5e5;
+  margin: 0;
+	height: 100%;
+  padding: 0 0 70px 0; // finality
+  li {
+    padding: 0.5rem;
+    overflow: hidden;
+    display: flex;
+  }
+  .avatar {
+    width: 50px; 
+    position: relative; 
+    img {
+      display: block; 
+      width: 100%;
+ 			border-radius:50%;
+
+
+    }
+  }
+}
+
+.other {
+  .avatar {
+    &:after {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border: 5px solid white;
+      border-left-color: transparent;
+      border-bottom-color: transparent;
+
+    }
+  }
+}
+
+.self {
+  justify-content: flex-end;
+  align-items: flex-end;
+  .messages {
+    order: 1;
+    border-bottom-right-radius: 0; 
+  }
+  .avatar {
+    order: 2;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: 5px solid #a4e786;
+      border-right-color: transparent;
+      border-top-color: transparent;
+      box-shadow: 1px 1px 2px rgba(black, 0.2); 
+    }
+  }
+}
+
+.messages {
+  color:black;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(black, 0.2);
+  p {
+    font-size: 1.2rem;
+    margin: 0 0 0.2rem 0;
+  }
+  time {
+    font-size: 0.7rem;
+    color: black;
+  }
+}
+
+.mymessage {
+	background-color: white;
+}
+
+.othermessage {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5ad427+0,a4e786+100 */
+background: #5ad427; /* Old browsers */
+background: -moz-linear-gradient(top,  #5ad427 0%, #a4e786 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5ad427), color-stop(100%,#a4e786)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #5ad427 0%,#a4e786 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #5ad427 0%,#a4e786 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #5ad427 0%,#a4e786 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #5ad427 0%,#a4e786 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ad427', endColorstr='#a4e786',GradientType=0 ); /* IE6-9 */
+
+}
+
+@keyframes pulse {
+  from { opacity: 0; }
+  to { opacity: 0.5; }
+}

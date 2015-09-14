@@ -24,12 +24,6 @@ module.exports = React.createClass({
 		return (
 			<section className="chat_container">
 				<MessageBox className="conversation" />
-				<footer>
-					<form className="form-inline">
-						<MessageInput inputOnChange={this.handleInputChange} value={this.state.chatInputValue} />
-						<ButtonAction clickHandler={this.handleButtonClick} text={text} className="btn btn-default" />
-					</form>
-				</footer>
 			</section>
 		);
 	}
