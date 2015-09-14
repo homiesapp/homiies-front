@@ -11,13 +11,29 @@ module.exports = React.createClass({
   },
 
   componentDidUpdate: function(position){
-    console.log(position);
+    
+    var latLng ={
+      lat: 49.281887,
+      lng: -123.1207
+    }
+
+    if(Object.keys(position).length > 0){
+      latitude = position.coords.latitude;
+      longitude = position.coords.longitude;
+    }
+
     var map = new GMaps({
       div: '#map',
-      lat: -12.043333,
-      lng: -77.028333,
+      lat: latLng.lat,
+      lng: latLng.lng,
       width: '100%',
       height: '100%',
+    });
+
+    var marker = new google.maps.Marker({
+      position: latLng,
+      map: map,
+      title: 'You are here'
     });
   },
 
