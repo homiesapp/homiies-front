@@ -1,5 +1,6 @@
 var React = require('react');
 var ButtonAction = require('./buttonaction');
+var request = require('superagent');
 
 module.exports = React.createClass({
   handleCloseModal: function(){
@@ -10,6 +11,16 @@ module.exports = React.createClass({
 
     var modalClass = "modal fade";
     var modalStyle;
+    var locations; 
+    
+    request.get('http://localhost:3000/suggest')
+            .set('Accept', 'application/json')
+            .end(function(err, res){
+              locations = res;
+            });
+
+    console.log(locations);
+
 
     if(this.props.isOpen){
       modalClass += " in";
@@ -30,6 +41,7 @@ module.exports = React.createClass({
             </div>
             <div className="modal-body">
               <p>Some text in the modal.</p>
+
             </div>
             <div className="modal-footer">
               <ButtonAction className="btn btn-default" clickHandler={this.handleCloseModal} text="Close" />

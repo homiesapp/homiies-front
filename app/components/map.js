@@ -2,7 +2,7 @@ var React = require('react');
 var Gmap = require('../../node_modules/gmaps');
 
 module.exports = React.createClass({
-  componentDidMount(){
+  componentDidMount: function(){
 
     // Only componentDidMount is called when the component is first added.
     // This makes sure that our map initialization code is run the first time.
@@ -10,7 +10,7 @@ module.exports = React.createClass({
     this.componentDidUpdate();
   },
 
-  componentDidUpdate(){
+  componentDidUpdate: function(){
     
     var map = new GMaps({
       div: '#map',
@@ -21,7 +21,7 @@ module.exports = React.createClass({
     });
   },
 
-  render(){
+  render: function(){
 
     return (
       <div id="map"></div>
