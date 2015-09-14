@@ -7,7 +7,11 @@ module.exports = React.createClass({
 
     // Only componentDidMount is called when the component is first added.
     // This makes sure that our map initialization code is run the first time.
-    navigator.geolocation.getCurrentPosition(this.componentDidUpdate);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.componentDidUpdate);
+    } else {
+      this.componentDidUpdate();
+    }
   },
 
   componentDidUpdate: function(position){
