@@ -1,5 +1,5 @@
 var React = require('react');
-var Buttonaction = require('./buttonaction.js')
+var ButtonAction = require('./button_action.js')
 var Fieldinput = require('./fieldinput');
 
 module.exports = React.createClass({
@@ -18,8 +18,8 @@ module.exports = React.createClass({
 						<Fieldinput />
 						<Fieldinput />
 						<Fieldinput />
-						<Buttonaction onClick={this.handleLogin} text={'login'}/>
-						<Buttonaction onClick={this.handleSignup} text={'Sign Up'}/>
+						<ButtonAction onClick={this.handleLogin} text={'login'}/>
+						<ButtonAction onClick={this.handleSignup} text={'Sign Up'}/>
 					</div>
 					<div className="col-md-4"></div>
 				</div>

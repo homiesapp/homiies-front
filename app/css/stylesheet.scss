@@ -72,6 +72,8 @@ html, body {
 
 		.quadrant{
 			height:100%;
+			padding-left: 0;
+			padding-right: 0;
 		}
 
 		.row{
@@ -237,7 +239,7 @@ html, body {
 	background-color: red;
 }
 .byellow {
-	background-color: yellow;
+	background-color: white;
 }
 .bgreen {
 	background-color: green;
@@ -248,3 +250,38 @@ html, body {
 			position: relative;
 			top: 55px;
 }
+
+/******** CHAT ********/
+.chat_container {
+
+}
+
+.conversation {
+	overflow: scroll;
+}
+
+.conversation li {
+}
+
+.message {
+	color: black;
+
+}
+
+input.chat_input.form-control {
+	height: 25px;
+}
+
+.chat_button {
+	width: 15%;
+}
+
+.self {
+  text-align: right;
+}
+
+.other {
+	text-align: left;
+}
+
+
