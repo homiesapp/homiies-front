@@ -69,6 +69,31 @@ module.exports = React.createClass({
 			       <p> tiny master db, and huge document store</p>
 			      </div>
 			    </li>
+			    <li className="other">
+			      <div className="avatar">
+			        <img src="http://blog.texasbar.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg" />
+			      </div>
+			      <div className="messages mymessage">
+			       <p> tiny master db, and huge document store</p>
+			      </div>
+			    </li>
+			    <li className="other">
+			      <div className="avatar">
+			        <img src="http://blog.texasbar.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg" />
+			      </div>
+			      <div className="messages mymessage">
+			       <p> tiny master db, and huge document store</p>
+			      </div>
+			    </li>
+			    <li className="other">
+			      <div className="avatar">
+			        <img src="http://blog.texasbar.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg" />
+			      </div>
+			      <div className="messages mymessage">
+			       <p> tiny master db, and huge document store</p>
+			      </div>
+			    </li>
+			    
 			  </ol>
 			  <footer className="footerfooter">
 					<form className="form-inline">
