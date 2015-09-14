@@ -16,10 +16,11 @@ module.exports = React.createClass({
       lat: 49.281887,
       lng: -123.1207
     }
+    console.log(Object.keys(position));
 
     if(Object.keys(position).length > 0){
-      latitude = position.coords.latitude;
-      longitude = position.coords.longitude;
+      latLng.lat = position.coords.latitude;
+      latLng.lng = position.coords.longitude;
     }
 
     var map = new GMaps({
@@ -30,11 +31,11 @@ module.exports = React.createClass({
       height: '100%',
     });
 
-    var marker = new google.maps.Marker({
-      position: latLng,
-      map: map,
-      title: 'You are here'
+    map.addMarker({
+      lat: latLng.lat,
+      lng: latLng.lng,
     });
+
   },
 
   render: function(){
