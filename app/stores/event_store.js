@@ -47,7 +47,7 @@ module.exports = Fluxxor.createStore({
 	},
 	getState: function () {
 		return {
-			eventList: this.event,
+			currentEvent: this.event,
 			loading: this.loading,
 			error: this.error,
 			eventInviteesNumber: this.eventInviteesNumber

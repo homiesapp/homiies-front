@@ -1,10 +1,16 @@
+//SuperAgent
+import request from "superagent";
+
+//React + fluxxor
 var React = require('react');
-var Friends = require('./friends');
-var SideMenu = require('./sidemenu');
-var Event = require('./event');
 var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
+
+//Components
+var Friends = require('./friends');
+var SideMenu = require('./sidemenu');
+var Event = require('./event');
 var Map = require('./map');
 var Modal = require('./modal');
 
@@ -17,23 +23,34 @@ module.exports = React.createClass({
 	getInitialState: function(){
     return {
       popup: false,
+      newEventId: null
     }
   },
-	clickHandler: function(){
+  clickHandleModal: function () {
+  	var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
+    request
+      .get(host + '/users/1/events/new')
+      .set('Accept', 'application/json')
+      .end(function (err, res) {
+        console.log(res.body);
+        this.state.newEventId = res.body;
+        this.openModal();
+      }.bind(this));
+  },
+	clickHandler: function() {
 		this.getFlux().actions.logInfo('clicking');
 	},
-	openModal: function(){
+	openModal: function() {
 		this.setState({
-      popup: true
+      popup: true,
     });
 	},
 	closeModal: function(){
 		this.setState({
-      popup: false
+      popup: false,
     });
 	},
 	render: function() {
-
 		return (
 			<div className="home row">
 				<div className="col-sm-2 side-menu">
@@ -42,8 +59,8 @@ module.exports = React.createClass({
 				<div className="col-sm-8 main-center-div ">
 					<div className="event-create">
 						<div className="col-sm-12 event-circle">
-							<div className="event-circle-text" onClick={this.openModal} >Create Event</div>
-							<Modal isOpen={this.state.popup} handleCloseModal={this.closeModal}/>
+							<div className="event-circle-text" onClick={this.clickHandleModal}>Create Event</div>
+							<Modal newEventId={this.state.newEventId} isOpen={this.state.popup} handleCloseModal={this.closeModal} />
 						</div>
 					</div>
 				</div>
