@@ -1,5 +1,6 @@
 var React = require('react');
 var Chat = require('./chat');
+var Map = require('./map');
 
 module.exports = React.createClass({
 	render: function () {
@@ -13,7 +14,9 @@ module.exports = React.createClass({
 						<div className="col-md-6 bblue quadrant"><h1>Votes</h1></div>
 					</div>
 					<div className="row">
-						<div className="col-md-6 bgreen quadrant"><h1>MAP</h1></div>
+						<div className="col-md-6 bgreen quadrant">
+							<Map />
+						</div>
 						<div className="col-md-6 byellow quadrant">
 							<Chat />
 						</div>
