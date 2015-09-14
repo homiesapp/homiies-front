@@ -16,9 +16,8 @@ module.exports = React.createClass({
       lat: 49.281887,
       lng: -123.1207
     }
-    console.log(Object.keys(position));
 
-    if(Object.keys(position).length > 0){
+    if(typeof position.coords !== "undefined"){
       latLng.lat = position.coords.latitude;
       latLng.lng = position.coords.longitude;
     }
