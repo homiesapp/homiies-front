@@ -8,7 +8,7 @@ module.exports = React.createClass({
 	mixins: [FluxMixin],
 	getInitialState: function() {
 				console.log('In main' + this.props.flux);
-        return { authenticated: false };
+        return { authenticated: true };
     },
 	handleClick: function() {
 		this.setState({ authenticated: true });

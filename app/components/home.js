@@ -39,7 +39,7 @@ module.exports = React.createClass({
 				<div className="col-sm-2 side-menu">
 					<SideMenu />
 				</div>
-				<div className="col-sm-8 main-center-div ">
+				<div className="col-sm-8 main-center-div hide">
 					<div className="event-create">
 						<div className="col-sm-12 event-circle">
 							<div className="event-circle-text" onClick={this.openModal} >Create Event</div>

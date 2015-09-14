@@ -1,10 +1,41 @@
 var React = require('react');
 
 
-module.exports = React.createClass((
+module.exports = React.createClass({
 	render: function () {
 		return (
-			<div className="left">Hello World</div>
+			<ul> 
+				<li className="message self">
+					<div>
+						<p>Hello Evert</p>
+						<time></time>
+					</div>
+				</li>
+				<li className="message other">
+					<div>
+						<p>Hello Evert</p>
+						<time></time>
+					</div>
+				</li>
+				<li className="message self">
+					<div>
+						<p>Hello Evert</p>
+						<time></time>
+					</div>
+				</li>
+				<li className="message other">
+					<div>
+						<p>Hello Evert</p>
+						<time></time>
+					</div>
+				</li>
+				<li className="message self">
+					<div>
+						<p>Hello Evert</p>
+						<time></time>
+					</div>
+				</li>
+			</ul>
 		);
-	},
-));
+	}
+});
