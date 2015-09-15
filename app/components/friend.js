@@ -33,7 +33,6 @@ module.exports = React.createClass({
             <Picture imageClass="friend-picture" imageSource="http://blog.texasbar.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg" />
           </div>
           <div className="col-md-3 friend-username">
-            <p >{this.props.homiie}</p>
           </div>
           <div className="col-md-5">
             <FriendInvite />
