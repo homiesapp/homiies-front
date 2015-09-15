@@ -18,7 +18,7 @@ require('./css/font-awesome.min.css');
 //stores
 var stores = {
 	EventsStore: new EventsStore(),
-	FriendsStore: new FriendsStore()
+	FriendsStore: new FriendsStore(),
 }
 
 //create single instance of flux

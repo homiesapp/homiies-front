@@ -21,7 +21,7 @@ module.exports = React.createClass({
 							<Map />
 						</div>
 						<div className="col-md-6 byellow quadrant">
-							<Chat />
+							<Chat event_id={this.props.event_id} />
 						</div>
 					</div>
 				</div>

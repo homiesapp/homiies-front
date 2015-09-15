@@ -2,7 +2,6 @@ var React = require('react');
 
 module.exports = React.createClass({ 
 	handleInputChange: function (event) {
-		console.log(event.target.value);
 		this.props.inputOnChange(event.target.value);
 	},
 	render: function () {

@@ -4,7 +4,8 @@ import request from "superagent";
 import $ from "jquery";
 
 module.exports = {
-// EVENTS STORE
+	
+	// EVENTS STORE
 	showEvents: function (events) {
 		this.dispatch(constants.SHOW_EVENTS, {events: events});
 	},
@@ -21,7 +22,12 @@ module.exports = {
         this.dispatch(constants.CREATE_EVENT_SUCCESS, {
         	newEvent: res
         });
-      }.bind(this));
+      }.bind(this))
+      .fail(function (err) {
+				this.dispatch(constants.CREATE_EVENT_FAIL, {
+					error: err
+				});
+			}.bind(this))
 	},
 	loadEventsOrder: function () {
 		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
@@ -49,34 +55,8 @@ module.exports = {
         });
       }.bind(this));
 	},
-// EVENT STORE
-	editEvent: function (event) {
-		this.dispatch(constants.EDIT_EVENT, {editEvent: editEvent});
-	},
-	showEvent: function (events) {
-		this.dispatch(constants.SHOW_EVENTS, {events: events});
-	},
-	addEvent: function (event) {
-		this.dispatch(constants.ADD_EVENT, {addEvent: addEvent});
-	},
-	loadEvent: function () {
-		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
-		this.dispatch(constants.LOAD_EVENT);
 
-		request
-      .get(host + '/users/' + 1 + '/events/' + 1)
-      .set('Accept', 'application/json')
-      .end(function(err, res){
-        this.dispatch(constants.LOAD_EVENT_SUCCESS, {
-        	event: res.body
-        });
-      }.bind(this));
-	},
-// FRIENDS STORE
-	logInfo: function(log) {
-		console.log('dispatching');
-		this.dispatch(constants.LOG_INFO, {log: log});
-	},
+	// FRIENDS STORE
 	showFriends: function (friends) {
 		this.dispatch(constants.SHOW_FRIENDS, {friends: friends});
 	},
@@ -93,5 +73,27 @@ module.exports = {
       .end(function(err, res){
         this.dispatch(constants.LOAD_FRIENDS_SUCCESS, {friends: res.body});
       }.bind(this));
-	}
+	},
+
+	// MESSAGES STORE
+	loadMessages: function (event_id) {
+		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
+		this.dispatch(constants.LOAD_MESSAGES);
+
+		$.ajax({
+			method: 'GET',
+			url: host + '/messages?event_id=' + event_id
+		})
+			.done(function (res) {
+				this.dispatch(constants.LOAD_MESSAGES_SUCCESS, {
+					messages: res
+				});
+			}.bind(this))
+			.fail(function (err) {
+				this.dispatch(constants.LOAD_MESSAGES_FAIL, {
+					error: err
+				});
+			}.bind(this));
+	},
+
 };

@@ -17,7 +17,8 @@ module.exports = React.createClass({
           this.state.events.map(function(anEvent) {
             return (
               <CurrentEvent 
-                key={anEvent.id} 
+                key={anEvent.id}
+                currentEventId={anEvent.id} 
                 eventNow={anEvent.title} />
             );
           })
