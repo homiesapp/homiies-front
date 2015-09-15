@@ -121,6 +121,7 @@ html, body {
 	.friends-column{
 		background-color: grey;
 		overflow-y:scroll;
+    overflow-x: hidden;
 		padding:0;
 		height: inherit;
 		border-left:5px solid black;
@@ -143,14 +144,14 @@ html, body {
 			left:0px;
 		}
 
-		.username{
+/*		.friend-username{
 			width: 70%;
 			display: inline-block;
 			color:black;
 			position: relative;
 			top: 50%;
 			transform: translateY(-50%);
-		}
+		}*/
 
 		.invited{
 			height:135px;
