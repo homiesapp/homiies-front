@@ -16,7 +16,7 @@ module.exports = React.createClass({
 		var text = 'Send';
 		return (
 			<section className="chat_container">
-				<MessageBox event_id={this.props.event_id} className="conversation" />
+				<MessageBox chatroom_id={this.props.chatroom_id} className="conversation" />
 			</section>
 		);
 	}

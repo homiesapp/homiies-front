@@ -7,7 +7,7 @@ var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 module.exports = React.createClass({
   mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
   eventClickHandle: function (event) {
-
+    //should take the user to the <Event /> "page"/component
   },
   render: function() {
     return (

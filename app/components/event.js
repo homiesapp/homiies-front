@@ -13,7 +13,7 @@ module.exports = React.createClass({
 							<h1>SWIPE</h1>
 						</div>
 						<div className="col-md-6 bblue quadrant">
-							<Votes />
+							<Votes event_id={this.props.event_id} />
 						</div>
 					</div>
 					<div className="row">
@@ -21,7 +21,7 @@ module.exports = React.createClass({
 							<Map />
 						</div>
 						<div className="col-md-6 byellow quadrant">
-							<Chat event_id={this.props.event_id} />
+							<Chat chatroom_id={this.props.chatroom_id} />
 						</div>
 					</div>
 				</div>

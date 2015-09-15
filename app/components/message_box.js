@@ -7,14 +7,12 @@ var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 //Components
 var MessageInput = require('./message_input');
 var ButtonAction = require('./button_action');
+var Message = require('./message');
 
 module.exports = React.createClass({
 	mixins: [FluxMixin, StoreWatchMixin("MessagesStore")],
 	handleInputChange: function (value) {
-		console.log(value);
-		this.setState({
-			chatInputValue: value
-		});
+		this.getFlux().actions.setTextInputValue(value);
 	},
 	getStateFromFlux: function () {
 		var store = this.getFlux().store('MessagesStore');
@@ -22,11 +20,11 @@ module.exports = React.createClass({
 			loading: store.loading,
 			error: store.error,
 			messages: store.messages,
-			newMessage: store.newMessage
+			textInput: store.textInput
 		};
 	},
 	componentDidMount: function () {
-		this.getFlux().actions.loadMessages(this.props.event_id);
+		this.getFlux().actions.loadMessages(this.props.chatroom_id);
 	},
 	handleAddMessage: function (event) {
 		event.preventDefault();
@@ -34,14 +32,18 @@ module.exports = React.createClass({
 	},
 	handleOnSubmit: function (event) {
 		event.preventDefault();
-		this.setState({
-			messages: this.state.messages.concat(this.state.chatInputValue),
-			chatInputValue: ''
-		});
+		var newMessage = {
+      message: {
+        user_id: 1, //here add the user_id from the current client session
+        chatroom_id: this.props.chatroom_id, //check if this is the right way to get data (through React vs Flux?)
+        text: this.state.textInput
+      }
+    };
+
+		this.getFlux().actions.addMessage(newMessage);
 	},
 	render: function () {
 		var text = "send";
-		console.log(this.state.messages);
 		return (
 			<section className="module">
 			  <ol className="discussion">
@@ -61,7 +63,7 @@ module.exports = React.createClass({
 				</ol>
 			  <footer className="footerfooter">
 					<form className="form-inline" onSubmit={this.handleOnSubmit} >
-						<MessageInput inputOnChange={this.handleInputChange} onKeyUp={this.handleAddMessage} value={this.state.chatInputValue} />
+						<MessageInput inputOnChange={this.handleInputChange} onKeyUp={this.handleAddMessage} value={this.state.textInput} />
 					</form>
 				</footer>
 			</section>

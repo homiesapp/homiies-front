@@ -64,7 +64,7 @@ module.exports = React.createClass({
 					</div>
 				</div>
 
-				<Event event_id={1} />
+				<Event event_id={1} chatroom_id={1} />
 
         <div className="col-sm-2 friends-column">
         	<buttonAction className="add_friend" />

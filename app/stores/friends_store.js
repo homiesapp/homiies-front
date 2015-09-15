@@ -10,6 +10,7 @@ module.exports = Fluxxor.createStore({
 		this.bindActions(
 			constants.LOAD_FRIENDS, this.onLoadFriends,
 			constants.LOAD_FRIENDS_SUCCESS, this.onLoadFriendsSuccess,
+			constants.LOAD_FRIENDS_FAIL, this.onLoadFriendsFail,
 			constants.SHOW_FRIENDS, this.onShowFriends,
 			constants.ADD_FRIEND, this.onAddFriend
 		);
@@ -25,7 +26,7 @@ module.exports = Fluxxor.createStore({
     this.emit('change');
 	},
 	onLoadFriendsFail: function (payload) {
-
+		console.log('in onLoadFriendsFail got the error: ', payload.error);
 	},
 	// STILL TO DO 
 	onShowFriends: function (payload) {
