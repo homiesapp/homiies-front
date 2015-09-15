@@ -1,53 +1,32 @@
 var React = require('react');
-var CurrentEvent = require('./current_event')
+var CurrentEvent = require('./current_event');
 var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
 module.exports = React.createClass({
   mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
+  eventClickHandle: function (event) {
+
+  },
   render: function() {
     return (
       <div className="current-events">
         {this.state.loading ? <li>Loading...</li> : null}
-        <div className="pending">
-          {
-            this.state.pendingEvents.map(function(pendingEvent) {
-              return (
-                <CurrentEvent 
-                  key =  {pendingEvent.id} 
-                  eventNow = {pendingEvent.title} />
-              );
-            })
-          }
-        </div>
-        <div className="attending">
-          {
-            this.state.attendingEvents.map(function(pendingEvent) {
-              return (
-                <CurrentEvent 
-                  key =  {pendingEvent.id} 
-                  eventNow = {pendingEvent.title} />
-              );
-            })
-          }
-        </div>
-        <div className="admin">
-          {
-            this.state.adminEvents.map(function(pendingEvent) {
-              return (
-                <CurrentEvent 
-                  key =  {pendingEvent.id} 
-                  eventNow = {pendingEvent.title} />
-              );
-            })
-          }
-        </div>
+        {
+          this.state.events.map(function(anEvent) {
+            return (
+              <CurrentEvent 
+                key={anEvent.id} 
+                eventNow={anEvent.title} />
+            );
+          })
+        }
       </div>
     );
   },
   componentDidMount: function () {
-    this.getFlux().actions.loadEvents();
+    this.getFlux().actions.loadEventsOrder();
   }, 
   getStateFromFlux: function () {
     var store = this.getFlux().store('EventsStore');
@@ -56,9 +35,6 @@ module.exports = React.createClass({
       loading: store.loading,
       error: store.error,
       events: store.events,
-      pendingEvents: store.pendingEvents,
-      attendingEvents: store.attendingEvents,
-      adminEvents: store.adminEvents
     };
   }
 });

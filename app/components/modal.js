@@ -1,14 +1,34 @@
+//React + Fluxxor + Jquery
 var React = require('react');
-var request = require('superagent');
+var Fluxxor = require('../../node_modules/fluxxor');
+var FluxMixin = Fluxxor.FluxMixin(React);
+import $ from "jquery";
 
-var ButtonAction = require('./button_action');
-
+//Components
+var ButtonAction = require('./buttonaction');
 
 module.exports = React.createClass({
+  mixins: [FluxMixin],
   handleCloseModal: function(){
     this.props.handleCloseModal();
   },
+  componentDidMount: function () {
 
+  },
+  handleCreateEvent: function () {
+    var date = new Date('December 17, 2015 20:15:00');
+    var newEvent = {
+      event: {
+        title: 'title test',
+        address: 'address test',
+        time: date,
+        postal_code: 'V6J 1J4',
+        city: 'Vancouver',
+        country: 'Canada'
+      }
+    };
+    this.getFlux().actions.createEvent(newEvent);
+  },
   render: function() {
 
     var modalClass = "modal fade";
@@ -36,7 +56,7 @@ module.exports = React.createClass({
 
             </div>
             <div className="modal-footer">
-              <ButtonAction className="btn btn-default" clickHandler={this.handleCloseModal} text="Close" />
+              <ButtonAction className="btn btn-default" clickHandler={this.handleCreateEvent} text="Close" />
             </div>
           </div>
           
