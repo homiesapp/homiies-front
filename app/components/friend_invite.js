@@ -1,4 +1,5 @@
 var React = require('react');
+var Picture = require('./picture')
 
 module.exports = React.createClass({
   render: function() {
@@ -7,7 +8,7 @@ module.exports = React.createClass({
 
     return (
       <div className="invited">
-       	  <p className="checkmark">checkmark goes here</p>
+          <Picture imageClass="checkmark" imageSource="../../public/check-mark-512.png"/>
       </div>
     );
   }

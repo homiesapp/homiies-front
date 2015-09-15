@@ -162,13 +162,15 @@ html, body {
 			background-color: #71c458;
 			position: relative;
 			left:90px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transform: translateY(inherit);
 		}
 		
 
 		.checkmark{
 			position: relative;
-			top: 50%;
-			transform: translateY(-50%);
 		}
 	}
 }
