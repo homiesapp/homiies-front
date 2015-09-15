@@ -10,14 +10,25 @@ module.exports = React.createClass({
 			chatInputValue: value
 		});
 	},
-	handleButtonClick: function () {
-		console.log('button click!');
+	handleAddMessage: function (event) {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			console.log('button click!');
+
+			this.setState({
+				messages: this.state.messages.concat(this.state.chatInputValue),
+				chatInputValue: ''
+			});
+		}
 	},
 	getInitialState: function () {
 		return {
 			messages: [],
-			chatInputValue: "ok"
+			chatInputValue: ''
 		};
+	},
+	handleOnSubmit: function (event) {
+		event.preventDefault();
 	},
 	render: function () {
 		var text = "send";
@@ -97,7 +108,7 @@ module.exports = React.createClass({
 			  </ol>
 			  <footer className="footerfooter">
 					<form className="form-inline">
-						<MessageInput inputOnChange={this.handleInputChange} value={this.state.chatInputValue} />
+						<MessageInput onSubmit={this.handleOnSubmit} inputOnChange={this.handleInputChange} onKeyUp={this.handleAddMessage} value={this.state.chatInputValue} />
 					</form>
 				</footer>
 			</section>
