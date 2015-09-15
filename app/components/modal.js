@@ -1,8 +1,14 @@
+//React + Fluxxor + Jquery
 var React = require('react');
+var Fluxxor = require('../../node_modules/fluxxor');
+var FluxMixin = Fluxxor.FluxMixin(React);
+import $ from "jquery";
+
+//Components
 var ButtonAction = require('./buttonaction');
-import request from "superagent";
 
 module.exports = React.createClass({
+  mixins: [FluxMixin],
   handleCloseModal: function(){
     this.props.handleCloseModal();
   },
@@ -10,25 +16,16 @@ module.exports = React.createClass({
 
   },
   handleCreateEvent: function () {
-    var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
-    var title = "Test event creation";
     var newEvent = {
       event: {
-        title: title
+        title: 'title test',
+        address: 'address test',
+        postal_code: 'V6J 1J4',
+        city: 'Vancouver',
+        country: 'Canada'
       }
     };
-    request
-      .post(host + '/users/' + 1 + '/events')
-      .send(newEvent)
-      .set('Accept', 'application/json')
-      .end(function (err, res) {
-        if (res.ok) {
-          console.log(res.body);
-          this.handlerCloseModal();
-        } else {
-          console.log(err.response);
-        }
-      }.bind(this));
+    this.getFlux().actions.createEvent(newEvent);
   },
   render: function() {
 

@@ -34,6 +34,7 @@
     "fluxxor": "^1.7.1",
     "gmaps": "^0.4.18",
     "http-proxy": "^1.11.2",
+    "jquery": "^2.1.4",
     "react": "^0.13.3",
     "sass-loader": "^2.0.1",
     "style-loader": "^0.12.3",

@@ -1,18 +1,34 @@
 var Fluxxor = require('../../node_modules/fluxxor');
 var constants = require('./constants');
 import request from "superagent";
+import $ from "jquery";
 
 module.exports = {
 // EVENTS STORE
 	showEvents: function (events) {
 		this.dispatch(constants.SHOW_EVENTS, {events: events});
 	},
+	createEvent: function (newEvent) {
+		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
+		this.dispatch(constants.CREATE_EVENT);
+
+		$.ajax({
+      method: "POST",
+      url: host + '/users/' + 1 + '/events',
+      data: newEvent
+    })
+      .done(function(res) {
+        this.dispatch(constants.CREATE_EVENT_SUCCESS, {
+        	newEvent: res
+        });
+      }.bind(this));
+	},
 	loadEventsOrder: function () {
 		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
 		this.dispatch(constants.LOAD_EVENTS);
 
 		request
-			.get(host + '/users/' + 1 + '/events?order=time')
+			.get(host + '/users/' + 1 + '/events?option=time')
 			.set('Accept', 'application/json')
 			.end(function (err, res) {
 				this.dispatch(constants.LOAD_EVENTS_ORDER_SUCCESS, {
@@ -25,13 +41,11 @@ module.exports = {
 		this.dispatch(constants.LOAD_EVENTS);
 
 		request
-      .get(host + '/users/' + 1 + '/events')
+      .get(host + '/users/' + 1 + '/events?option=all')
       .set('Accept', 'application/json')
       .end(function(err, res){
         this.dispatch(constants.LOAD_EVENTS_SUCCESS, {
-        	pendingEvents: res.body.events_pending,
-        	attendingEvents: res.body.events_attending,
-        	adminEvents: res.body.events_admin
+        	events: res.body
         });
       }.bind(this));
 	},

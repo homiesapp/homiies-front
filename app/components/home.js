@@ -38,7 +38,6 @@ module.exports = React.createClass({
       }.bind(this));
   },
 	clickHandler: function() {
-		this.getFlux().actions.logInfo('clicking');
 	},
 	openModal: function() {
 		this.setState({
