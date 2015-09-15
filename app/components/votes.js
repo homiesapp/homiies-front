@@ -15,7 +15,7 @@ module.exports = React.createClass({
 			  <tr>
 			    <td className="name-data">Evert</td>
 			    <td className="green-data"><div className="center-checkmark"><img className="checkmark" src="../../public/check-mark-512.png"/></div></td> 
-			    <td className="red-data"><img className="checkmark" src="../../public/delete-2-512.png"/></td>
+			    <td className="red-data"><img className="checkmark saturate" src="../../public/delete-2-512.png"/></td>
 			    <td className="red-data"><img className="checkmark" src="../../public/delete-2-512.png"/></td>
 			  </tr>
 			  <tr>

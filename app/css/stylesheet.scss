@@ -243,14 +243,21 @@ html, body {
 
 }
 .bred {
-	background-color: red;
+	background-color: white;
+	border-left: solid 1px black;
+	border-bottom: solid 1px black;
+
 }
+
 .byellow {
 	background-color: white;
 	border-left: solid 1px black;
+
 }
 .bgreen {
 	background-color: green;
+	border-left: solid 1px black;
+
 }
 
 div.col-md-6.byellow.quadrant {
@@ -460,6 +467,11 @@ div.col-md-6.bblue.quadrant {
 	height: 100%;
 	overflow-y:scroll;
 }
+div.col-md-6.bred.quadrant {
+	color:black;
+		height: 100%;
+	overflow-y:scroll;
+}
 
 .name-data {
 	color:black;
@@ -467,7 +479,9 @@ div.col-md-6.bblue.quadrant {
 
 .checkmark {
 	max-height: 40px;
+
 }
+.saturate {-webkit-filter: saturate(10);}
 
 .table-header {
 	color:black;
@@ -476,4 +490,12 @@ div.col-md-6.bblue.quadrant {
 
 table {
 	text-align: center;
+}
+
+.swipe-image {
+	width: 250px;
+}
+
+td {
+	vertical-align:middle;
 }
