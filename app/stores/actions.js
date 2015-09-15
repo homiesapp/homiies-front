@@ -127,7 +127,7 @@ module.exports = {
 		this.dispatch(constants.LOAD_SUGGESTIONS);
 
 		$.ajax({
-			method: 'GET'
+			method: 'GET',
 			url: host + 'suggest?event_id=' + event_id //to be completed
 		})
 			.done(function (res) {
