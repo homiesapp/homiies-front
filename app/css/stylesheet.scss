@@ -55,6 +55,7 @@ html, body {
 	margin: 0;
 	height: 100%;
 	padding: 0;
+	font-family: 'Raleway', sans-serif;
 }
 
 .main {
@@ -108,7 +109,7 @@ html, body {
 	}
 
 	.side-menu {
-		background-color: #674172;
+		background-color: #545454;
 		overflow-y:scroll;
 		height: inherit;
 		padding-left: 0px;
@@ -123,7 +124,7 @@ html, body {
 		overflow-y:scroll;
 		padding:0;
 		height: inherit;
-		border-left:5px solid black;
+		box-shadow: -10px 0px 10px -9px grey;
 
 
 
@@ -235,7 +236,7 @@ html, body {
 }
 
 .bblue {
-	background-color: blue;
+	background-color: #e5e5e5;
 
 }
 .bred {
@@ -243,9 +244,14 @@ html, body {
 }
 .byellow {
 	background-color: white;
+	border-left: solid 1px black;
 }
 .bgreen {
 	background-color: green;
+}
+
+div.col-md-6.byellow.quadrant {
+	border-left:1px solid black;
 }
 
 
@@ -302,7 +308,7 @@ width: 100%;
 
 @import url(http://weloveiconfonts.com/api/?family=typicons);
 [class*="typicons-"]:before {
-  font-family: 'Typicons', sans-serif;
+  font-family: 'Helvitica', sans-serif;
 }
 
 
@@ -414,4 +420,57 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ad427', end
 @keyframes pulse {
   from { opacity: 0; }
   to { opacity: 0.5; }
+}
+
+.votes-table {
+	overflow-y: scroll;
+	width: 100%;
+	color:white;
+	height: 100%;
+}
+
+.green-data {
+	background-color: #4CD964;
+}
+.red-data {
+	background-color: #E74C3C;
+}
+
+.green-data:hover {
+	cursor:pointer;
+	background-color: #E74C3C;
+}
+
+.red-data:hover {
+	cursor:pointer;
+	background-color: #4CD964;
+}
+
+table.votes-table.table-bordered {
+	overflow-y: scroll;
+	height: 100%;
+
+}
+
+
+div.col-md-6.bblue.quadrant {
+	height: 100%;
+	overflow-y:scroll;
+}
+
+.name-data {
+	color:black;
+}
+
+.checkmark {
+	max-height: 40px;
+}
+
+.table-header {
+	color:black;
+	text-align:center;
+}
+
+table {
+	text-align: center;
 }
