@@ -139,9 +139,10 @@ html, body {
 			color:black;
 		}
 
-		.friend:hover + .invited {
-			position: relative;
-			left:0px;
+		.friend:hover .invited {
+      position: relative;
+      left:0px;
+      transition: left 2s;
 		}
 
 /*		.friend-username{
