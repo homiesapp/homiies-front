@@ -5,7 +5,7 @@ module.exports = React.createClass({
 	render: function () {
 		var text = 'Send';
 		return (
-			<table className="votes-table table-bordered">
+			<table className="votes-table table">
 				<tr className="table-header">
 			    <th>Homiies</th>
 			    <th>Event 1</th>

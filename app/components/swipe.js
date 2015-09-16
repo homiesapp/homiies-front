@@ -11,7 +11,7 @@ module.exports = React.createClass({
 	},
   render: function() {
     return (
-    	<div>
+    	<div className={this.props.eventClass}>
     		<h1>{this.props.eventTitle}</h1>
     		<h1>{this.props.eventRating}</h1>
     		<h1>{this.props.eventType}</h1>

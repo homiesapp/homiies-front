@@ -17,6 +17,23 @@ module.exports = React.createClass({
 		
 		return (
 			<div className="main container-fluid">
+				<nav className="navbar navbar-default">
+				  <div className="container-fluid">
+				    <div className="navbar-header">
+				      <a className="navbar-brand" href="#">Homiies</a>
+				    </div>
+
+				    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				      <ul className="nav navbar-nav">
+				        <li className="active"><a href="#">Link <span className="sr-only">(current)</span></a></li>
+				        <li><a href="#">Link</a></li>
+				      </ul>
+				      <ul className="nav navbar-nav navbar-right">
+				        <li><a href="#">Link</a></li>
+				      </ul>
+				    </div>
+				  </div>
+				</nav>
 				{this.state.authenticated ? <Home /> : <Authentication /> }
 			</div>
 		);

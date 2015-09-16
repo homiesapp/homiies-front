@@ -114,7 +114,7 @@ html, body {
 		height: inherit;
 		padding-left: 0px;
 		padding-right:0px;
-
+		border-right: 5px #34AADC solid;
 
 	 } 
 
@@ -125,7 +125,8 @@ html, body {
     overflow-x: hidden;
 		padding:0;
 		height: inherit;
-		box-shadow: -10px 0px 10px -9px grey;
+		border-left: 5px #34AADC solid;
+
 
 
 
@@ -133,7 +134,7 @@ html, body {
 			height:135px;
 			width:100%;
 			background-color:white;
-			margin-top:2px;
+			border-bottom: 1px solid #545454;
 			padding-left: 5px;
 			cursor:pointer;
 			z-index: 100;
@@ -142,8 +143,8 @@ html, body {
 
 		.friend:hover .invited, .friend.clicked .invited{
       position: relative;
-      left:0px;
-      transition: left 2s;
+      left:20px;
+      transition: left 0.4s;
 		}
 
 /*		.friend-username{
@@ -159,7 +160,7 @@ html, body {
 			height:135px;
 			min-width: 50px;
 			max-width: 100px;
-			background-color: #71c458;
+			background-color: #4CD964;
 			position: relative;
 			left:90px;
       display:flex;
@@ -225,6 +226,7 @@ html, body {
 }
 
 .friend-picture {
+	margin-left:15px;
 	border-radius:50%;
 	height: 110px;
 	width: 110px;
@@ -244,24 +246,24 @@ html, body {
 }
 .bred {
 	background-color: white;
-	border-left: solid 1px black;
-	border-bottom: solid 1px black;
+	border-right: 4px #34AADC solid;
+
 
 }
 
 .byellow {
 	background-color: white;
-	border-left: solid 1px black;
 
 }
 .bgreen {
 	background-color: green;
-	border-left: solid 1px black;
+	border-right: 5px #34AADC solid;
+
 
 }
 
 div.col-md-6.byellow.quadrant {
-	border-left:1px solid black;
+
 }
 
 
@@ -401,11 +403,11 @@ width: 100%;
   border-radius: 2px;
   box-shadow: 0 1px 2px rgba(black, 0.2);
   p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 0 0 0.2rem 0;
   }
   time {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: black;
   }
 }
@@ -456,7 +458,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ad427', end
 	background-color: #4CD964;
 }
 
-table.votes-table.table-bordered {
+table.votes-table.table {
 	overflow-y: scroll;
 	height: 100%;
 
@@ -498,4 +500,49 @@ table {
 
 td {
 	vertical-align:middle;
+}
+
+.display-none {
+	display: none;
+}
+
+.navbar.navbar-default {
+	margin-bottom: 0px;
+	background-color: #34AADC;
+	border-bottom: 3px #34AADC solid;
+
+
+}
+
+.main.container-fluid {
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.row.top {
+	border-bottom: 5px #34AADC solid;
+}
+
+button.btn.btn-success {
+	background-color: #4CD964;
+	border:#4CD964 2px solid;
+	width: 50%;
+	padding:30px;
+
+}
+
+button.btn.btn-success:hover {
+	background-color: #8be69b;
+	border: #8be69b 2px solid;
+}
+
+button.btn.btn-danger {
+	width: 50%;
+	padding:30px;
+
+} 
+
+.btn-group {
+	width:100%;
+	margin-top:10px;
 }

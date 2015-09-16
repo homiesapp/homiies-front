@@ -129,7 +129,7 @@ module.exports = {
 		
 		$.ajax({
 			method: 'POST',
-			url: host + '/vote/' + suggestion_id + "?vote=" + vote//to be completed
+			url: host + '/suggestions/' + suggestion_id + "/votes"//to be completed
 		})
 			.done(function (res) {
 				this.dispatch(constants.MAKE_SUGGESTION_SUCCESS, {
@@ -146,7 +146,7 @@ module.exports = {
 
 		$.ajax({
 			method: 'GET',
-			url: host + 'suggest?event_id=' + event_id //to be completed
+			url: host + 'suggestions?event_id=' + event_id //to be completed
 		})
 			.done(function (res) {
 				this.dispatch(constants.LOAD_SUGGESTIONS_SUCCESS, {
