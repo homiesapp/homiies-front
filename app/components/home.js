@@ -6,6 +6,7 @@ var React = require('react');
 var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
+var SuggestionsStore = require('../stores/suggestions_store');
 
 //Components
 var Friends = require('./friends');
@@ -48,6 +49,9 @@ module.exports = React.createClass({
 		this.setState({
       popup: false,
     });
+	},
+	componentWillMount: function () {
+		this.getFlux().addStore('SuggestionsStore', new SuggestionsStore());
 	},
 	render: function() {
 		return (

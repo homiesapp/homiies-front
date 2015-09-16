@@ -10,6 +10,7 @@ var actions = require('./stores/actions');
 var EventsStore = require('./stores/events_store');
 var FriendsStore = require('./stores/friends_store');
 
+
 //CSS
 require('./css/stylesheet.scss');
 require('./css/bootstrap.min.css');

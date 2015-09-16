@@ -122,6 +122,24 @@ module.exports = {
 	setTextInputValue: function (text) {
 		this.dispatch(constants.GET_TEXT_INPUT, {textInput: text});
 	},
+	// SUGGESTIONS STORE
+	nextSuggestion: function (vote) {
+		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
+		this.dispatch(constants.MAKE_SUGGESTION);
+		
+		$.ajax({
+			method: 'POST',
+			url: host + '/vote/' + suggestion_id + "?vote=" + vote//to be completed
+		})
+			.done(function (res) {
+				this.dispatch(constants.MAKE_SUGGESTION_SUCCESS, {
+					suggestions: res
+				})
+			}.bind(this))
+			.fail(function (err) {
+				this.dispatch(constants.MAKE_SUGGESTION_FAIL, {error: err});
+			}.bind(this));
+	},
 	loadSuggestions: function (event_id) {
 		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
 		this.dispatch(constants.LOAD_SUGGESTIONS);

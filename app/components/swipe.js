@@ -3,6 +3,12 @@ var Picture = require('./picture');
 var ButtonAction = require('./button_action');
 
 module.exports = React.createClass({
+	refuseSuggestion: function(){
+		this.props.handleRefuseSuggestion();
+	},
+	acceptSuggestion: function(){
+		this.props.handleAcceptSuggestion();
+	},
   render: function() {
     return (
     	<div>
@@ -11,8 +17,8 @@ module.exports = React.createClass({
     		<h1>{this.props.eventType}</h1>
     		<Picture imageSource={this.props.eventPicture} imageClass="swipe-image"/>
     		<div className="btn-group" role="group" aria-label="...">
-    			<ButtonAction className="btn btn-danger" text="No" clickHandler="decline"/>
-    			<ButtonAction className="btn btn-success" text="Yes" clickHandler="accept"/>
+    			<ButtonAction className="btn btn-danger" text="No" clickHandler={this.refuseSuggestion}/>
+    			<ButtonAction className="btn btn-success" text="Yes" clickHandler={this.acceptSuggestion}/>
     		</div>
     	</div>
 
