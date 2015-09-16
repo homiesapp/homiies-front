@@ -30,7 +30,7 @@ module.exports = React.createClass({
       <div className={friendClass} onClick={this.setClass}>
         <div className="row">
           <div className="col-md-4">
-            <Picture imageClass="friend-picture" imageSource="http://blog.texasbar.com/files/2011/12/housto-bankruptcy-attorney-adam-schachter1.jpg" />
+            <Picture imageClass="friend-picture" imageSource={this.props.picture} />
           </div>
           <div className="col-md-3 friend-username">
           </div>

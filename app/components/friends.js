@@ -13,7 +13,7 @@ module.exports = React.createClass({
         {this.state.loading ? <li>Loading...</li> : null}
         {this.state.friendsList.map(function(friend, index) {
           return (
-            <Friend  key={friend.id} />
+            <Friend  key={friend.id} picture={friend.email}/>
           );
         })}
       </div>

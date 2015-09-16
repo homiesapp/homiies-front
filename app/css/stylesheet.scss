@@ -99,7 +99,7 @@ html, body {
 		}
 		.event-circle:hover {
 			cursor:pointer;
-			background-color: #ffa;
+			background-color: #C8E9F7;
 		}
 		.event-circle-text {
 			position: relative;
@@ -211,7 +211,7 @@ html, body {
 
 .current-event:hover {
 	cursor:pointer;
-	background-color: #fff8dc;
+	background-color: #E1F1F7;
 }
 
 
@@ -545,4 +545,8 @@ button.btn.btn-danger {
 .btn-group {
 	width:100%;
 	margin-top:10px;
+}
+
+.image-profile {
+	border:5px #34AADC solid;
 }
