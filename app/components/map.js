@@ -31,9 +31,8 @@ module.exports = React.createClass({
       lat: latLng.lat,
       lng: latLng.lng,
       width: '100%',
-      height: '100%',
     });
-    
+
     this.props.suggestions.forEach (function(sug){
       map.addMarker({
         lat: sug.lat,

@@ -380,10 +380,16 @@ input.chat_input.form-control {
 }
 
 
-
+#map{
+  height: -webkit-calc(100% - 35px);
+  height: -moz-calc(100% - 35px);
+  height: calc(100% - 35px);
+}
 
 .module {
-	height: 100%;
+  height: -webkit-calc(100% - 35px);
+  height: -moz-calc(100% - 35px);
+  height: calc(100% - 35px);
 	overflow: scroll;
 }
 .discussion {
