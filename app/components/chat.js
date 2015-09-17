@@ -16,6 +16,9 @@ module.exports = React.createClass({
 		var text = 'Send';
 		return (
 			<section className="chat_container">
+				<div className="component-header">
+          <p className="component-header-text">Chat</p>
+        </div>
 				<MessageBox chatroom_id={this.props.chatroom_id} className="conversation" />
 			</section>
 		);

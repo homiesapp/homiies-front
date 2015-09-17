@@ -43,6 +43,7 @@ module.exports = React.createClass({
 
 	},
 	render: function () {
+<<<<<<< HEAD
 		console.log("suggestions: ", this.state.suggestions);
 		console.log("suggestioncounter: ", suggestionCounter)
     if(this.state.suggestions.length > 0){
@@ -51,6 +52,8 @@ module.exports = React.createClass({
     }
    
 		console.log("anEvent: ", anEvent)
+=======
+>>>>>>> 6f750c756158423ae5eb105addb622373a6e0a48
 
 		return (
 			<div className="col-sm-8 main-center-div abcdefgh">
@@ -91,6 +94,7 @@ module.exports = React.createClass({
 							<div className="component-header">
 	                <p className="component-header-text">Chat</p>
 	            </div>
+
 							<Chat chatroom_id={this.props.chatroom_id} />
 						</div>
 					</div>
@@ -100,6 +104,9 @@ module.exports = React.createClass({
 	}, 
 	componentDidMount: function() {
 		this.getFlux().actions.loadSuggestions(1);
+	},
+	componendDidUpdate: function () {
+		console.log('EVENT DID UPDATE!!!!!!');
 	},
   getStateFromFlux: function () {
     var store = this.getFlux().store('SuggestionsStore');
