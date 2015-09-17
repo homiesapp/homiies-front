@@ -25,7 +25,7 @@ module.exports = React.createClass({
     if(this.state.invited){
       friendClass = friendClass + " clicked"
     }
-
+    console.log(friendClass)
     return (
       <div className={friendClass} onClick={this.setClass}>
         <div className="row">
@@ -35,7 +35,9 @@ module.exports = React.createClass({
           <div className="col-md-3 friend-username">
           </div>
           <div className="col-md-5">
+           
             <FriendInvite />
+
           </div>
         </div>
       </div>

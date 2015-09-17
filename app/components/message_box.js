@@ -49,14 +49,15 @@ module.exports = React.createClass({
 			  <ol className="discussion">
 			  {this.state.loading ? <li>Loading...</li> : null}
 			  {
-			  	this.state.messages.map(function (message) {
+			  	this.state.messages.map(function (message, index) {
 			  		return (
 			  			<Message 
-			  				className="other"
+			  				className={index % 2 == 0 ? "other" : "self"}
 			  				key={message.id}
 			  				text={message.text}
 			  				user_id={message.user_id}
-			  				created_at={message.created_at} />
+			  				created_at={message.created_at}
+			  				avatar = {index % 2 == 0 ? "../../public/image3.jpeg" : "../../public/image4.jpeg"} />
 			  		);
 			  	})
 			  }

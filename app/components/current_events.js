@@ -6,6 +6,10 @@ var StoreWatchMixin = Fluxxor.StoreWatchMixin;
 
 module.exports = React.createClass({
   mixins: [FluxMixin, StoreWatchMixin("EventsStore")],
+  clickHandlerCurrentEvents: function() {
+    console.log("in CurrentEvents")
+    this.props.clickHandlerSideMenu()
+  },
   eventClickHandle: function (event) {
     //should take the user to the <Event /> "page"/component
   },
@@ -19,9 +23,10 @@ module.exports = React.createClass({
               <CurrentEvent 
                 key={anEvent.id}
                 currentEventId={anEvent.id} 
-                eventNow={anEvent.title} />
+                eventNow={anEvent.title}
+                clickHandlerCurrentEvents={this.clickHandlerCurrentEvents}/>
             );
-          })
+          }.bind(this))
         }
       </div>
     );

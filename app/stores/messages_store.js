@@ -38,7 +38,7 @@ module.exports = Fluxxor.createStore({
 		this.emit('change');
 	},
 	onCreateMessageSuccess: function (payload) {
-		this.laoding = false;
+		this.loading = false;
 		this.errorOnCreate = null;
 		this.messages = this.messages.concat(payload.newMessage);
 		this.textInput = ''

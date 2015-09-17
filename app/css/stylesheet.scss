@@ -56,10 +56,11 @@ html, body {
 	height: 100%;
 	padding: 0;
 	font-family: 'Raleway', sans-serif;
+	background-color: #34AADC;
 }
 
 .main {
-	background-color: #34495E;
+	background-color: white;
 
 	.main-center-div {
 		height: 100vh;
@@ -89,17 +90,17 @@ html, body {
 
 		.event-circle{
 			/* temp color */
-			background-color:white;
+			background-color:#34AADC;
 			height: 180px;
 			width: 180px;
 			border-radius: 50%;
-			border:solid #71c458 5px;
-			color:black;
+			border:solid white 5px;
+			color:white;
 			font-size: 2em;
 		}
 		.event-circle:hover {
 			cursor:pointer;
-			background-color: #C8E9F7;
+			opacity: 0.7;
 		}
 		.event-circle-text {
 			position: relative;
@@ -126,15 +127,15 @@ html, body {
 		padding:0;
 		height: inherit;
 		border-left: 5px #34AADC solid;
-
-
+		z-index: 100;
+	
 
 
 		.friend {
 			height:135px;
 			width:100%;
-			background-color:white;
-			border-bottom: 1px solid #545454;
+			background-color:#34AADC;
+			border-top: 1px white solid;
 			padding-left: 5px;
 			cursor:pointer;
 			z-index: 100;
@@ -143,9 +144,12 @@ html, body {
 
 		.friend:hover .invited, .friend.clicked .invited{
       position: relative;
-      left:20px;
+      left:-40px;
       transition: left 0.4s;
+      background-color: #93d4ef;
 		}
+
+	
 
 /*		.friend-username{
 			width: 70%;
@@ -157,10 +161,10 @@ html, body {
 		}*/
 
 		.invited{
-			height:135px;
-			min-width: 50px;
-			max-width: 100px;
-			background-color: #4CD964;
+			height:134px;
+			min-width: 150px;
+			max-width: 200px;
+			background-color: #93d4ef;
 			position: relative;
 			left:90px;
       display:flex;
@@ -193,25 +197,29 @@ html, body {
 }
 
 .profile {
-	height:180px;
+	height:200px;
 	background-color: white;
 }
 
 .current-event {
 	height:135px;
+	font-size: 50px;
 	width:100%;
-	background-color:white;
-	margin-top:1px;
+	background-color:#34AADC;
+	border-top: 1px white solid;
 	padding-left: 5px;
-	padding-top: 20px;
-	color:black;
-	  transition: height 0.5s;
+	padding-top: 40px;
+	color:white;
+	transition: height 0.5s;
   -webkit-transition: height 0.5s;
 }
 
 .current-event:hover {
 	cursor:pointer;
-	background-color: #E1F1F7;
+	background-color: #93d4ef;
+}
+.current-event.clicked .abcdefgh{
+	display: none !important;
 }
 
 
@@ -220,19 +228,21 @@ html, body {
 	height:140px;
 	width: 140px;
 	border-radius: 50%;
-	top:18px;
+	top:0px;
+	left:-10px;
 	position:relative;
+	z-index: 100;
 
 }
 
 .friend-picture {
-	margin-left:15px;
+	margin-left:25px;
 	border-radius:50%;
 	height: 110px;
 	width: 110px;
 	position: relative;
 	top:12px;
-	border:3px #71c458 solid;
+	border:3px white solid;
 
 }
 
@@ -241,13 +251,15 @@ html, body {
 }
 
 .bblue {
+	border-top:1px #34AADC solid;
+
 	background-color: #e5e5e5;
 
 }
 .bred {
 	background-color: white;
 	border-right: 4px #34AADC solid;
-
+	border-top:4px #34AADC solid;
 
 }
 
@@ -292,10 +304,55 @@ div.col-md-6.byellow.quadrant {
 
 input.chat_input.form-control {
 width: 100%;
+border-top:2px #34AADC solid;
+position: relative;
+left:-2px;
+float:left;
+z-index: -10;
 
+}
+.center-event {
+	position:relative;
+}
+.hidden-event {
+	display: none !important;
+	opacity: 0;
+
+}
+.appearing-event {
+	position:relative;
+	 -webkit-animation: fadein 4s;
+	 -webkit-animation: upslide 0.5s;
+}
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@-webkit-keyframes upslide {
+	from { bottom: -1000px;}
+  to   { bottom: 0px; }
+}
+
+@-webkit-keyframes downslide {
+	from { bottom: 0px;}
+  to   { bottom: -1000px; }
 }
 
 
+
+
+.creating-event {
+	display: none !important;
+}
+.creating-event.show {
+	display: flex !important;
+	 -webkit-animation: upslidetwo 0.5s;
+	}
+@-webkit-keyframes upslidetwo {
+	from { bottom: 2000px;}
+  to   { bottom:  0px;  }
+
+}
 
 /*.self {
   float: right;
@@ -442,21 +499,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ad427', end
 }
 
 .green-data {
-	background-color: #4CD964;
+	background-color: white;
 }
 .red-data {
-	background-color: #E74C3C;
+	background-color:white;
 }
 
-.green-data:hover {
-	cursor:pointer;
-	background-color: #E74C3C;
-}
 
-.red-data:hover {
-	cursor:pointer;
-	background-color: #4CD964;
-}
 
 table.votes-table.table {
 	overflow-y: scroll;
@@ -480,37 +529,62 @@ div.col-md-6.bred.quadrant {
 }
 
 .checkmark {
-	max-height: 40px;
+	max-height: 25px;
 
 }
-.saturate {-webkit-filter: saturate(10);}
+.checkmark2 {
+	max-height: 45px;
+
+}
+
 
 .table-header {
-	color:black;
+	color:white;
 	text-align:center;
+	background-color: #545454;
 }
 
 table {
 	text-align: center;
 }
 
+
 .swipe-image {
-	width: 250px;
+	width: 200px;
+	height: 200px;
+	border-radius:50%;
+	margin-top:50px;
+
 }
 
 td {
 	vertical-align:middle;
 }
 
-.display-none {
-	display: none;
+th {
+	vertical-align: middle;
+	border-bottom: 1px solid black;
+}
+tr > th {
+	text-align: center;
+	font-size:20px;
 }
 
+
+
+.name-data {
+	background-color: #545454;
+	position: relative;
+	top:0px;
+	font-size: 20px;
+	color:white;
+
+}
 .navbar.navbar-default {
 	margin-bottom: 0px;
 	background-color: #34AADC;
 	border-bottom: 3px #34AADC solid;
-
+	z-index: 100;
 
 }
 
@@ -528,6 +602,8 @@ button.btn.btn-success {
 	border:#4CD964 2px solid;
 	width: 50%;
 	padding:30px;
+	position: relative;
+	top:0px;
 
 }
 
@@ -539,14 +615,85 @@ button.btn.btn-success:hover {
 button.btn.btn-danger {
 	width: 50%;
 	padding:30px;
+	position: relative;
+	top:0px;
 
 } 
 
 .btn-group {
 	width:100%;
-	margin-top:10px;
+	margin-top:60px;
 }
 
 .image-profile {
-	border:5px #34AADC solid;
+	margin-top:20px;
+	border:5px white solid;
+}
+
+.table-header {
+	text-align: center;
+}
+
+th {
+	border:2px #34AADC solid !important;
+}
+td {
+	border:2px #34AADC solid !important;
+}
+.modal-dialog {
+	height: 100%;
+  
+}
+
+.modal-content {
+	color:white;
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.profile {
+	background-color:#34AADC;
+
+}
+tr:last-child > td {
+  border-bottom: 0px !important;
+}
+
+.navbar-brand {
+	padding-left:50px !important;
+}
+
+.right-profile {
+	position: relative;
+	top:60px;
+	width:70%;
+	left:5px;
+}
+
+.andrea {
+	position: relative;
+	top:-20px;
+	left:-10px;
+	margin-bottom: -20px;
+}
+.current-event-title {
+	font-size: 24px;
+}
+
+.component-header {
+	height:35px;
+	width:100%;
+	background-color: white;
+	border-bottom:1px #34AADC solid;
+
+}
+.component-header-text {
+	font-size: 23px;
+	color:#34AADC;
+
+}
+
+.swipe-row {
+	height:0px;
 }

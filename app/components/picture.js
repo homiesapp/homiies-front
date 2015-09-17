@@ -5,6 +5,7 @@ module.exports = React.createClass({
 		return (
 			<div>
 				<img className={this.props.imageClass} src={this.props.imageSource} />
+				
 			</div>
 			);
 	}

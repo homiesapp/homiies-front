@@ -8,6 +8,7 @@ module.exports = React.createClass({
       <div className="profile">
         <div className="col-md-12">
         		  <Picture imageClass="image-profile" imageSource="../../public/image3.jpeg" />
+        		  <h3 className="andrea">Andrea</h3>
         </div>
       </div>
     )

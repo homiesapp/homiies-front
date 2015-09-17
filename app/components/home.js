@@ -24,7 +24,9 @@ module.exports = React.createClass({
 	getInitialState: function(){
     return {
       popup: false,
-      newEventId: null
+      newEventId: null,
+      showCenterEvent: false
+
     }
   },
   clickHandleModal: function () {
@@ -38,7 +40,12 @@ module.exports = React.createClass({
         this.openModal();
       }.bind(this));
   },
-	clickHandler: function() {
+	clickHandlerHome: function() {
+		console.log("in home.js")
+		var invBool = !this.state.showCenterEvent;
+		this.setState({
+		  showCenterEvent: invBool,
+		});
 	},
 	openModal: function() {
 		this.setState({
@@ -54,22 +61,35 @@ module.exports = React.createClass({
 		this.getFlux().addStore('SuggestionsStore', new SuggestionsStore());
 	},
 	render: function() {
+		var centerEventClass = "center-event";
+    var mainCenterDiv = "col-sm-8 main-center-div creating-event";
+
+    if(this.state.showCenterEvent){
+      centerEventClass = "hidden-event"
+      mainCenterDiv = mainCenterDiv + " show"
+    }
+    else {
+    	centerEventClass = "appearing-event";
+    	mainCenterDiv = mainCenterDiv
+    }
+
 		return (
 			<div className="home row">
 				<div className="col-sm-2 side-menu">
-					<SideMenu />
+					<SideMenu clickHandlerHome={this.clickHandlerHome}/>
 				</div>
-				<div className="col-sm-8 main-center-div hide">
-					<div className="event-create">
+				<div className={mainCenterDiv}>
+				
 						<div className="col-sm-12 event-circle">
 							<div className="event-circle-text" onClick={this.clickHandleModal}>Create Event</div>
 							<Modal newEventId={this.state.newEventId} isOpen={this.state.popup} handleCloseModal={this.closeModal} />
-						</div>
+
 					</div>
 				</div>
-
-				<Event event_id={1} chatroom_id={1} />
-
+					<div className= {centerEventClass}>
+						<Event event_id={1} chatroom_id={1} />
+					</div>
+				
         <div className="col-sm-2 friends-column">
         	<buttonAction className="add_friend" />
 					<Friends />

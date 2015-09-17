@@ -143,10 +143,10 @@ module.exports = {
 	loadSuggestions: function (event_id) {
 		var host = 'http://localhost:3000';  //'https://boiling-beyond-5952.herokuapp.com';
 		this.dispatch(constants.LOAD_SUGGESTIONS);
-
+		console.log("im in loadSuggestions");
 		$.ajax({
 			method: 'GET',
-			url: host + 'suggestions?event_id=' + event_id //to be completed
+			url: host + '/events/' + event_id + '/suggestions' //to be completed
 		})
 			.done(function (res) {
 				this.dispatch(constants.LOAD_SUGGESTIONS_SUCCESS, {

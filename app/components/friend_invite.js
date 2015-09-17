@@ -8,7 +8,7 @@ module.exports = React.createClass({
 
     return (
       <div className="invited">
-          <Picture imageClass="checkmark" imageSource="../../public/check-mark-512.png"/>
+          <Picture imageClass="checkmark2" imageSource="../../public/check-mark-5122.png"/>
       </div>
     );
   }

@@ -49,14 +49,24 @@ module.exports = React.createClass({
           <div className="modal-content">
             <div className="modal-header">
               <ButtonAction className="close" clickHandler={this.handleCloseModal} text="&times;" />
-              <h4 className="modal-title">Modal Header</h4>
+              <h4 className="modal-title">Create Event</h4>
             </div>
             <div className="modal-body">
-              <p>Some text in the modal.</p>
+            <form className="form-group">
+                <label for="exampleInputEmail1">Event Title</label>
+                <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Event Title"></input>
+              </form>
+              
+               <form className="form-group">
+                <label for="exampleInputEmail1">Address</label>
+                <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Address"></input>
+              </form>
+               
+
 
             </div>
             <div className="modal-footer">
-              <ButtonAction className="btn btn-default" clickHandler={this.handleCreateEvent} text="Close" />
+              <ButtonAction className="btn btn-warning" clickHandler={this.handleCreateEvent} text="Create Event" />
             </div>
           </div>
           
