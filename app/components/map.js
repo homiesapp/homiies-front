@@ -47,11 +47,14 @@ module.exports = React.createClass({
       icon: "https://lh3.ggpht.com/A0x3jzuH1qRkE10HcTiT4qQr_6iAqVg-CTsoIqxnoIFyv92V91WI3KqiVlOvLtfoMRg=w40"
     });
 
-    console.log("suggestions", this.props);
+    console.log("suggestions", this.props.suggestions);
     this.props.suggestions.forEach (function(sug){
       map.addMarker({
         lat: sug.lat,
         lng: sug.long,
+        infoWindow: {
+          content: "<div class=\"iw-text\">"+sug.title+"</div>"
+        }
       });
     });
 
