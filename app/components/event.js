@@ -23,7 +23,6 @@ module.exports = React.createClass({
 		});
 	},
 	render: function () {
-		console.log("suggestions: ", this.state.suggestions);
 
 		return (
 			<div className="col-sm-8 main-center-div abcdefgh">
@@ -63,6 +62,7 @@ module.exports = React.createClass({
 						<div className="component-header">
                 <p className="component-header-text">Map</p>
             </div>
+            	{console.log('RIGHT BEFORE THE MAP COMPONENT: ', this.state.suggestions)}
 							<Map suggestions={this.state.suggestions}/>
 						</div>
 						<div className="col-md-6 byellow quadrant">
@@ -75,6 +75,9 @@ module.exports = React.createClass({
 	}, 
 	componentDidMount: function() {
 		this.getFlux().actions.loadSuggestions(1);
+	},
+	componendDidUpdate: function () {
+		console.log('EVENT DID UPDATE!!!!!!');
 	},
   getStateFromFlux: function () {
     var store = this.getFlux().store('SuggestionsStore');

@@ -146,7 +146,7 @@ module.exports = {
 		console.log("im in loadSuggestions");
 		$.ajax({
 			method: 'GET',
-			url: host + '/events/' + event_id + '/suggestions' //to be completed
+			url: host + '/events/' + event_id + '/suggestions?user_id=1' //to be completed NEED &user_id
 		})
 			.done(function (res) {
 				this.dispatch(constants.LOAD_SUGGESTIONS_SUCCESS, {
