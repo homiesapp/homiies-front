@@ -6,6 +6,8 @@ var Swipe = require('./swipe')
 var Fluxxor = require('../../node_modules/fluxxor');
 var FluxMixin = Fluxxor.FluxMixin(React);
 var StoreWatchMixin = Fluxxor.StoreWatchMixin;
+var counter = 0;
+var suggestionCounter = 0;
 
 module.exports = React.createClass({
 	mixins: [FluxMixin, StoreWatchMixin("EventsStore","SuggestionsStore")],
@@ -16,14 +18,39 @@ module.exports = React.createClass({
 	acceptSuggestion: function(){
 		this.getFlux().actions.nextSuggestion(0)
 	},
+	switchSuggestion: function(){
+		suggestionCounter += 1;
+	},
 	swapIcon: function() {
 		var iconState = !this.state.iconState;
-		this.setState({
-			iconState: iconState
+		if(counter == 0) {	
+			this.setState({
+			iconState: 0
 		});
+		}
+		if (counter == 1) {	
+			this.setState({
+			iconState: 1
+		});
+		}
+		if (counter == 2) {	
+			this.setState({
+			iconState: 2
+		});
+		}
+		counter += 1
+		
+
 	},
 	render: function () {
 		console.log("suggestions: ", this.state.suggestions);
+		console.log("suggestioncounter: ", suggestionCounter)
+    if(this.state.suggestions.length > 0){
+    	 var anEvent = this.state.suggestions[suggestionCounter] 
+    	 var rendering = true
+    }
+   
+		console.log("anEvent: ", anEvent)
 
 		return (
 			<div className="col-sm-8 main-center-div abcdefgh">
@@ -33,42 +60,37 @@ module.exports = React.createClass({
 							<div className="component-header">
 	                <p className="component-header-text">Suggestions</p>
 	            </div>
-										{ this.state.suggestions.map(function(anEvent,index) {
 										
 										
-										 return (
 							        <Swipe
-							          eventTitle={anEvent.title}
-							          eventRating={anEvent.rating}
-							          eventType={anEvent.type_place}
-							          eventPicture={anEvent.photo_req}
-							          eventWebsite={anEvent.web_url}
-												handleSwapIcon={this.swapIcon}/>
-							         
-							      );
+							          eventTitle={rendering ? anEvent.title : ""}
+							          eventRating={rendering ? anEvent.rating : ""}
+							          eventType={rendering ? anEvent.type_place : ""}
+							          eventPicture={rendering ? anEvent.photo_req : ""}
+							          eventWebsite={rendering ? anEvent.web_url : ""}
+												handleSwapIcon={rendering ? this.swapIcon : ""}
+												switchSuggestion={rendering ? this.switchSuggestion : ""}/>
 										
-										
-							    }.bind(this))
-								}
-						</div>
-						<div className="col-md-6 bblue quadrant">
-						<div className="component-header">
-                <p className="component-header-text">Votes</p>
-            </div>
-							<Votes event_id={this.props.event_id} iconState={this.state.iconState} />
-						</div>
+								
+					  </div>
+							<div className="col-md-6 bblue quadrant">
+								<div className="component-header">
+	             	   <p className="component-header-text">Votes</p>
+	           		</div>
+								<Votes eventSuggestions={this.state.suggestions} event_id={this.props.event_id} iconState={this.state.iconState} />
+							</div>
 					</div>
 					<div className="row">
 						<div className="col-md-6 bgreen quadrant">
-						<div className="component-header">
-                <p className="component-header-text">Map</p>
-            </div>
-							<Map suggestions={this.state.suggestions}/>
+							<div className="component-header">
+	                <p className="component-header-text">Map</p>
+	            </div>
+								<Map suggestions={this.state.suggestions}/>
 						</div>
 						<div className="col-md-6 byellow quadrant">
-						<div className="component-header">
-                <p className="component-header-text">Chat</p>
-            </div>
+							<div className="component-header">
+	                <p className="component-header-text">Chat</p>
+	            </div>
 							<Chat chatroom_id={this.props.chatroom_id} />
 						</div>
 					</div>

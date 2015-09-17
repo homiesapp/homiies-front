@@ -52,12 +52,12 @@ module.exports = React.createClass({
 			  	this.state.messages.map(function (message, index) {
 			  		return (
 			  			<Message 
-			  				className={index % 2 == 0 ? "other" : "self"}
+			  				className="self"
 			  				key={message.id}
 			  				text={message.text}
 			  				user_id={message.user_id}
 			  				created_at={message.created_at}
-			  				avatar = {index % 2 == 0 ? "../../public/image3.jpeg" : "../../public/image4.jpeg"} />
+			  				avatar =  "../../public/image3.jpeg"  />
 			  		);
 			  	})
 			  }

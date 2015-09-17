@@ -11,6 +11,7 @@ module.exports = React.createClass({
 	},
     swapIcon: function(){
         this.props.handleSwapIcon();
+        this.props.switchSuggestion();
     },
   render: function() {
     return (
