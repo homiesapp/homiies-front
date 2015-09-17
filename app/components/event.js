@@ -66,9 +66,6 @@ module.exports = React.createClass({
 							<Map suggestions={this.state.suggestions}/>
 						</div>
 						<div className="col-md-6 byellow quadrant">
-						<div className="component-header">
-                <p className="component-header-text">Chat</p>
-            </div>
 							<Chat chatroom_id={this.props.chatroom_id} />
 						</div>
 					</div>

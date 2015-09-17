@@ -182,6 +182,7 @@ html, body {
 
 .footerfooter {
 	height:0px;
+  width: 100%;
 }
 .home {
 	text-align: center;
@@ -303,13 +304,10 @@ div.col-md-6.byellow.quadrant {
 }
 
 input.chat_input.form-control {
-width: 100%;
-border-top:2px #34AADC solid;
-position: relative;
-left:-2px;
-float:left;
-z-index: -10;
-
+  width: inherit;
+  border-top:2px #34AADC solid;
+  position: relative;
+  border-radius:0;
 }
 .center-event {
 	position:relative;
@@ -370,9 +368,10 @@ z-index: -10;
 
 
 .form-inline {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: inherit;
 }
 
 @import url(http://weloveiconfonts.com/api/?family=typicons);
@@ -563,7 +562,6 @@ td {
 
 th {
 	vertical-align: middle;
-	border-bottom: 1px solid black;
 }
 tr > th {
 	text-align: center;
@@ -635,10 +633,10 @@ button.btn.btn-danger {
 }
 
 th {
-	border:2px #34AADC solid !important;
+	/*border:2px #34AADC solid !important;*/
 }
 td {
-	border:2px #34AADC solid !important;
+	/*border:2px #34AADC solid !important;*/
 }
 .modal-dialog {
 	height: 100%;
